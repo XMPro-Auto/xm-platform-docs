@@ -8,6 +8,10 @@ on:
       - v4.4
       - v5.0
 
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pages: write
