@@ -1,0 +1,38 @@
+name: Validate Documentation
+
+on:
+  pull_request:
+    branches: [main, v4.5, v4.4, v5.0]
+    paths:
+      - 'docs/**/*.md'
+      - 'docs/**/*.png'
+      - 'docs/**/*.jpg'
+      - 'docs/**/*.gif'
+      - 'docs/**/*.svg'
+      - 'mkdocs.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          config: '.markdownlint.json'
+          globs: 'docs/**/*.md'
+
+      - name: Check Links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-loopback
+            --exclude 'javascript:'
+            --exclude 'mailto:'
+            --suggest
+            --timeout 30
+            --max-retries 3
+            'docs/**/*.md'
+          fail: true

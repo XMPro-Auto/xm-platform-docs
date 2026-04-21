@@ -1,0 +1,8 @@
+# This file ensures the images directory is preserved in git
+# even when it's empty
+
+# Ignore all files in this directory
+*
+
+# But keep this .gitignore file
+!.gitignore

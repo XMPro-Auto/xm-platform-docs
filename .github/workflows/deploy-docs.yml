@@ -1,0 +1,57 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - v4.5
+      - v4.4
+      - v5.0
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material mike
+
+      - name: Configure git for mike
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Determine version label
+        id: version
+        run: |
+          BRANCH="${GITHUB_REF_NAME}"
+          case "$BRANCH" in
+            main)   VERSION="4.6" ;;
+            v4.5)   VERSION="4.5" ;;
+            v4.4)   VERSION="4.4" ;;
+            v5.0)   VERSION="5.0" ;;
+            *)      echo "Unknown branch: $BRANCH"; exit 1 ;;
+          esac
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy with mike
+        run: |
+          mike deploy --push --update-aliases ${{ steps.version.outputs.version }}
+
+      - name: Set default version (main branch only)
+        if: github.ref_name == 'main'
+        run: |
+          mike set-default --push ${{ steps.version.outputs.version }}
