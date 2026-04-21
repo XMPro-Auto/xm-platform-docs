@@ -61,8 +61,8 @@ XMPro has the capability to pass data to Azure Machine Learning and train models
 #### Further Reading
 
 * [How to work with Data Streams](../../how-tos/data-streams/manage-data-streams.md)
-* [Python Integration](https://xmpro.gitbook.io/python/)
-* [Azure ML Integration](https://xmpro.gitbook.io/azure-ml/)
+* [Python Integration](https://xmpro.gitbook.io/integrations/python/)
+* [Azure ML Integration](https://xmpro.gitbook.io/integrations/azure-ml/)
 
 ### I've seen Mining examples. Can XMPro compose a Digital Twin for utilities?
 
@@ -84,9 +84,19 @@ Typically for the hybrid deployment, the stream host is deployed on-premises wit
 
 On-premise deployments have been driven by the need for remote locations, as well as constraints on internet access from within a corporate network.
 
+#### Further Reading
+
+* [On-Premise deployment](../../installation/deployment/windows-server-2022/index.md)
+* [All deployment options](../../installation/deployment/index.md)
+
 ### If XMPro is in the Cloud, can I connect to my On-Premise application(s)?
 
 Yes. If your applications are internet-facing, then a cloud stream host can be used. If your applications are behind a firewall and internal to your network, then in this instance XMPro will be a hybrid deployment model, with the stream host located on-premises.
+
+#### Further Reading
+
+* [Azure Deployment Diagram](../../installation/deployment/azure.md#architecture)
+* [AWS Deployment Diagram](../../installation/deployment/aws.md#architecture)
 
 ### Do I need a separate server for the stream host, or will it run on the same application server?
 

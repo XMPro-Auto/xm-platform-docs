@@ -1,4 +1,4 @@
-# Upload Agents and Connectors
+# Install Agents & Connectors
 
 After you have installed App Designer and Data Stream Designer and set up a new Company, you will want to add Connectors and Agents to the Company. This article will show you step-by-step how to upload the default set of Connectors and Agents.
 

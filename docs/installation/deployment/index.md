@@ -1,4 +1,5 @@
-# Deploy XMPro
+# 2. Install XMPro
 
-- [Azure Terraform](azure-terraform/index.md)
+- [AWS](aws.md)
+- [Azure](azure.md)
 - [Windows Server 2022](windows-server-2022/index.md)

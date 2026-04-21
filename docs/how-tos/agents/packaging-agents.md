@@ -132,7 +132,7 @@ To remove a file from the list, click the _Delete_ button next to the file name 
 | Agent | The DLL file that was generated when you built the project containing your Agent source code. |
 | Reference | Additional DLL file(s) referenced by the Agent File, such as Newtonsoft.Json. <br>You do not need to upload the _XMIoT.Framework.dll_ file as this DLL is automatically included. |
 | Resource | Additional DLL file(s) needed by the Reference File. |
-| Zip | The Stream Host decompresses the file, while maintaining the folder structure, so that Agents such as the [Meta Agent](https://xmpro.gitbook.io/meta/how-to-use/configuration#export-agent) can run external source code and self package. |
+| Zip | The Stream Host decompresses the file, while maintaining the folder structure, so that Agents such as the [Meta Agent](https://xmpro.gitbook.io/integrations/meta/how-to-use/configuration#export-agent) can run external source code and self package. |
 
 ![References configuration](../../images/references-config.png)
 
@@ -231,71 +231,9 @@ This feature leverages generative AI to provide language translation. It is avai
 
 > [!NOTE]
 >
-> - **What is Translated:**  The Agent description and static properties added when packaging the Agent are translated, whereas internal messages and dynamic properties added when [building the Agent](building-agents.md) are not.
-> - **Minimum XMPro Product Version:** The tables below outline the minimum versions of XMPro Data Stream Designer (DS), XMPro Stream Host (SH), and XMPro Package Manager (PM) required for multilingual support.
-> - **If Automated Translations Are Incorrect:** Edit the translations in the JSON file and repackage it with an incremented version number.
->  
->   <table style="width:100%; table-layout:fixed;">
->    <thead>
->      <tr>
->        <th style="width:49%;">DS &amp; SH Multilingual Support</th>
->        <th style="width:17%;">Pre v4.4.16</th>
->        <th style="width:17%;">v4.4.16+</th>
->        <th style="width:17%;">v4.5.4+</th>
->      </tr>
->    </thead>
->    <tbody>
->      <tr>
->        <td>Internal messages and dynamic properties</td>
->        <td>✗</td>
->        <td>✗</td>
->        <td>✗</td>
->      </tr>
->      <tr>
->        <td>Agent description and static properties</td>
->        <td>✗</td>
->        <td>✓</td>
->        <td>✓</td>
->      </tr>
->      <tr>
->        <td>Static property drop-down options</td>
->        <td>✗</td>
->        <td>✗</td>
->        <td>✓</td>
->      </tr>
->    </tbody>
->   </table>
->  
->   <table style="width:100%; table-layout:fixed;">
->     <thead>
->       <tr>
->         <th style="width:49%;">PM Multilingual Support</th>
->         <th style="width:17%;">Pre v1.3.18</th>
->         <th style="width:17%;">v1.3.18+</th>
->         <th style="width:17%;">v4.5.4+</th>
->       </tr>
->     </thead>
->     <tbody>
->       <tr>
->         <td>Internal messages and dynamic properties</td>
->         <td>✗</td>
->         <td>✗</td>
->         <td>✗</td>
->       </tr>
->       <tr>
->         <td>Agent description and static properties</td>
->         <td>✗</td>
->         <td>✓</td>
->         <td>✓</td>
->       </tr>
->       <tr>
->         <td>Static property drop-down options</td>
->         <td>✗</td>
->         <td>✗</td>
->         <td>✓</td>
->       </tr>
->     </tbody>
->   </table>
+> - Only the Agent Description, Properties and Static Helptext are translated. Internal messages and dynamic Helptext added when [building the Agent](building-agents.md) are not included.
+> - Multilingual support requires XMPro Data Stream Designer and Stream Host v4.4.16+.
+> - Override the automated translations by editing the JSON file and repackaging it with an incremented version number.
 
 ![Output configuration](../../images/pm-output-1.png)
 

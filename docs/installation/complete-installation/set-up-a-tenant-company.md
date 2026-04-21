@@ -1,8 +1,6 @@
-# Set up your First Tenant
+# Create Base Company
 
-## Create Base Company
-
-### Create a company subscription
+## Create a company subscription
 
 1. Browse to the XMPro Subscription Manager website and click on _Sign up for an account_.
 
@@ -38,7 +36,7 @@
 
 ![](../../images/image-1160.png)
 
-### Request a license
+## Request a license
 
 Next we add subscriptions for Data Stream Designer and App Designer to the new Company:
 
@@ -67,7 +65,7 @@ Next we add subscriptions for Data Stream Designer and App Designer to the new C
 
 When you have received a license for each product through an email sent to the email address used to create this account, return to this page.
 
-### Upload the license
+## Upload the license
 
 1. Select the Data Stream Designer product, upload its corresponding license and click Save
 

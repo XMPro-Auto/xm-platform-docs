@@ -24,9 +24,9 @@ We have chosen not to implement hard limits like similar products e.g. Microsoft
 
 ### Connector Selection
 
-Choose either a Connector designed for large volumes of data (e.g. [TSC SQL Server Connector](https://xmpro.gitbook.io/tsc-sql-server-connector/)) - or one that does not reload with each interaction (e.g. [SQL Server Connector](https://xmpro.gitbook.io/sql-server-connector/)).
+Choose either a Connector designed for large volumes of data (e.g. [TSA SQL Server Connector](https://xmpro.gitbook.io/integrations/tsa-sql-server-connector/)) - or one that does not reload with each interaction (e.g. [SQL Server Connector](https://xmpro.gitbook.io/integrations/sql-server-connector/)).
 
-If there isn't a specialized TSC Connector available for your data source yet, you can utilize the [ITSAConnector](../../how-tos/connectors/building-connectors.md#itsaconnector) interface to build one.
+If there isn't a specialized TSA Connector available for your data source yet, you can utilize the [ITSAConnector](../../how-tos/connectors/building-connectors.md#itsaconnector) interface to build one.
 
 [Link to resource](https://youtu.be/Sm5plue7P2A)
 

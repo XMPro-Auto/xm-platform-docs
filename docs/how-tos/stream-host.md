@@ -7,11 +7,11 @@ A Stream Host is an application that can either be installed as a Docker contain
 >
 > * [Stream Host](../concepts/collection.md#stream-hosts)
 
-## How to Deploy a Stream Host
+## How to Install a Stream Host
 
 The recommended Stream Host deployment is as a Docker container - see the [Docker](../installation/complete-installation/install-stream-host/docker.md) instructions.
 
-For installation instructions, see [Deploy Stream Host](../installation/complete-installation/install-stream-host/docker.md).
+Alternate methods can be found at [Install Stream Host](../installation/complete-installation/install-stream-host/index.md).
 
 ## Logs
 

@@ -1,5 +1,6 @@
 # Windows Server 2022
 
+- [Install](install.md)
+- [Prerequisites](prerequisites.md)
 - [Troubleshooting](troubleshooting.md)
-- [Multi-Server Deployment](multi-server-deployment.md)
-- [Airgapped Deployment](airgapped-deployment.md)
+- [Upgrade](upgrade.md)

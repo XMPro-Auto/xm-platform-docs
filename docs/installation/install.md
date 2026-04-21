@@ -54,7 +54,7 @@ The following software must be installed on the Stream Host server:
 >
 > **1** Not a prerequisite from v4.4.1+.\
 > **2** As per the ARM template for your Azure instance.\
-> **3** See the Ubuntu documentation for installing [ASP.NET Core Runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu) and [.NET Runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu) on Ubuntu.
+> **3** See the Ubuntu software install commands [here](complete-installation/install-stream-host/ubuntu-16.04+-x64.md#software-install-commands).
 
 ## Certificate and Communication Steps
 
@@ -144,7 +144,7 @@ Remove-Item -Path "Cert:\LocalMachine\My\$($cert.Thumbprint)"
 > 3. **Certificate Validation**: Verify the certificate was created correctly by running:
 >
 >    ```powershell
->    Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {$_.Subject -like "*yourdomain.com*"}
+>    Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {$_.Subject -like "_yourdomain.com_"}
 >    ```
 >
 > 4. **File Permissions**: Ensure the exported `.pfx` file and `.password.txt` file have appropriate read permissions.

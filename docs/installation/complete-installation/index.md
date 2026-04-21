@@ -1,6 +1,8 @@
-# Post-deployment
+# 3. Complete Installation
 
-- [Setup your First Tenant](set-up-a-tenant-company.md)
-- [Upload Agents and Connectors](install-connectors.md)
-- [Deploy Stream Host](install-stream-host/index.md)
-- [Deploy Stream Connector Infrastructure (Optional)](deploy-stream-connector-infrastructure.md)
+- [Configure Auto Scale (Optional)](configure-auto-scale-optional.md)
+- [Configure Health Checks (Optional)](configure-health-checks-optional.md)
+- [Configure Logging (Optional)](configure-logging-optional.md)
+- [Create Base Company](set-up-a-tenant-company.md)
+- [Install Agents & Connectors](install-connectors.md)
+- [Install Stream Host](install-stream-host/index.md)

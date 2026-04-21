@@ -81,11 +81,13 @@ Alternatively, a user's business role can also be managed from the user blade. S
 
 ![Change Business Role](../images/change-business-role.png)
 
-### Sync Business Roles from Azure Entra ID
+### Sync Business Roles from Azure AD
 
-If Azure Entra ID has been linked as your External Identity Provider, you can specify a claim name that Azure Entra ID or the graph API will pass to Subscription Manager.
+If [Azure AD](../installation/complete-installation/configure-sso-optional/sso-azure-ad.md) has been linked as your External Identity Provider, you can specify a claim name that Azure AD or the graph API will pass to Subscription Manager.
 
 When a user logs in, Subscription Manager will look at the value specified in this Claim and assign them to the Business Role with the same name.
+
+[See the Sync Azure AD Role to SM's Business Role article for information on how to configure the claim name.](../installation/complete-installation/configure-sso-optional/sso-azure-ad.md#sync-azure-ad-role-to-sms-business-role)
 
 > [!NOTE]
 > If a Business Role with the same name doesn't exist, it will be created as a child under the default Business Role, 'All Employees'.

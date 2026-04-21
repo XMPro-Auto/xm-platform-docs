@@ -1,8 +1,11 @@
-# Stream Host Docker
+# Docker
 
 ## Introduction
 
 This guide covers the XMPro Stream Host Docker image available from version 4.4.19 onwards. The latest Stream Host images have been redesigned for improved security and usability.
+
+> [!NOTE]
+> For Stream Host images prior to v4.4.19, please refer to Docker v4.4.2 - v4.4.18 documentation.
 
 ## Prerequisites
 
@@ -51,7 +54,7 @@ xmpro.azurecr.io/stream-host
 All images are tagged with their version number. For example:
 
 ```
-xmpro.azurecr.io/stream-host:4.6.0
+xmpro.azurecr.io/stream-host:4.4.19
 ```
 
 The `latest` tag points to the most recent release:
@@ -69,9 +72,9 @@ A Stream Host running a Data Stream must provide the capabilities to run each Ag
 
 | Image Name | Description |
 | --- | --- |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim` | Debian (Default) |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim-python3.12` | Debian with Python |
-| `xmpro.azurecr.io/stream-host:4.6.0-alpine3.21` | Alpine |
+| `xmpro.azurecr.io/stream-host:4.4.19-bookworm-slim` | Debian (Default) |
+| `xmpro.azurecr.io/stream-host:4.4.19-bookworm-slim-python3.12` | Debian with Python |
+| `xmpro.azurecr.io/stream-host:4.4.19-alpine3.21` | Alpine |
 
 ### Choosing the Right Image
 
@@ -258,4 +261,8 @@ docker-compose down
 > [!NOTE]
 > For more information on Docker Compose, see the [Docker Compose Overview](https://docs.docker.com/compose/).
 
-Your Stream Host installation is now complete.
+## Next Step
+
+Your Stream Host installation is now complete. To install default Agents & Connectors, visit:
+
+* [Install Connectors](../install-connectors.md)

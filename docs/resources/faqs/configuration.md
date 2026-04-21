@@ -40,7 +40,7 @@ WHERE Status IN (2,3); -- For cleanup operations
 
 #### Further Reading
 
-- [SQL Server Listener and Action Agents](https://xmpro.gitbook.io/sql-server)
+- [SQL Server Listener and Action Agents](https://xmpro.gitbook.io/integrations/sql-server)
 
 ### How do I pass selected grid rows to a stored procedure?
 

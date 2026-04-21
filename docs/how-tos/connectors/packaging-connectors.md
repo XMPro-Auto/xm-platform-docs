@@ -130,71 +130,9 @@ This feature leverages generative AI to provide language translation. It is avai
 
 > [!NOTE]
 >
-> * **What is Translated:**  The Connector description and static properties added when packaging the Connector are translated, whereas internal messages and dynamic properties added when [building the Connector](building-connectors.md) are not.
-> * **Minimum XMPro Product Version:** The tables below outline the minimum versions of XMPro App Designer (AD) and XMPro Package Manager (PM) required for multilingual support.
-> * **If Automated Translations Are Incorrect:** Edit the translations in the JSON file and repackage it with an incremented version number.
->  
->   <table style="width:100%; table-layout:fixed;">
->    <thead>
->      <tr>
->        <th style="width:49%;">AD Multilingual Support</th>
->        <th style="width:17%;">Pre v4.4.16</th>
->        <th style="width:17%;">v4.4.16+</th>
->        <th style="width:17%;">v4.5.4+</th>
->      </tr>
->    </thead>
->    <tbody>
->      <tr>
->        <td>Internal messages and dynamic properties</td>
->        <td>✗</td>
->        <td>✗</td>
->        <td>✗</td>
->      </tr>
->      <tr>
->        <td>Connector description and static properties</td>
->        <td>✗</td>
->        <td>✓</td>
->        <td>✓</td>
->      </tr>
->      <tr>
->        <td>Static property drop-down options</td>
->        <td>✗</td>
->        <td>✗</td>
->        <td>✓</td>
->      </tr>
->    </tbody>
->   </table>
->  
->   <table style="width:100%; table-layout:fixed;">
->     <thead>
->       <tr>
->         <th style="width:49%;">PM Multilingual Support</th>
->         <th style="width:17%;">Pre v1.3.18</th>
->         <th style="width:17%;">v1.3.18+</th>
->         <th style="width:17%;">v4.5.4+</th>
->       </tr>
->     </thead>
->     <tbody>
->       <tr>
->         <td>Internal messages and dynamic properties</td>
->         <td>✗</td>
->         <td>✗</td>
->         <td>✗</td>
->       </tr>
->       <tr>
->         <td>Agent description and static properties</td>
->         <td>✗</td>
->         <td>✓</td>
->         <td>✓</td>
->       </tr>
->       <tr>
->         <td>Static property drop-down options</td>
->         <td>✗</td>
->         <td>✗</td>
->         <td>✓</td>
->       </tr>
->     </tbody>
->   </table>
+> * Only the Connector Description, Properties and Static Helptext are translated. Internal messages and dynamic Helptext added when [building the Connector](building-connectors.md) are not included.
+> * Multilingual support requires XMPro App Designer v4.4.16+.
+> * Override the automated translations by editing the JSON file and repackaging it with an incremented version number.
 
 ![](../../images/pm-output-1.png)
 

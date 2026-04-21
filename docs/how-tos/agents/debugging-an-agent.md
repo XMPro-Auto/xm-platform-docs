@@ -12,9 +12,9 @@ Agents can be traced and debugged once they are added and used in a Data Stream.
 ![Package Manager Configuration](../../images/debugging-package-manager.png)
 
 * Add the Packaged Agent in the Data Stream Designer by following the [Adding an Agent](manage-agents.md#adding-an-agent) article.
-* Install the XMPro Stream Host by following the [Deploy a Stream Host](../stream-host.md#how-to-deploy-a-stream-host) article. Within the installation wizard, select Console Application as the Host Type.
+* Install the XMPro Stream Host by following the [Install a Stream Host](../stream-host.md#how-to-install-a-stream-host) article. Within the installation wizard, select Console Application as the Host Type.
 
-![Deploy Stream Host](../../images/debugging-install-stream-host.png)
+![Install Stream Host](../../images/debugging-install-stream-host.png)
 
 * Create a new Data Stream for testing the agent and select the collection profile you used during Installation of Stream Host.
 

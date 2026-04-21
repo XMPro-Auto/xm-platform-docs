@@ -32,7 +32,7 @@ We call these patterns 'Composable Business Capabilities'. (CBC[1]) The customer
 
 [1] Gartner Reference Model for Intelligent Composable Business Applications
 
-[2] <https://xmpro.github.io/Blueprints-Accelerators-Patterns/>
+[2] <https://github.com/XMPro/Blueprints-Accelerators-Patterns>
 
 [3] Gartner Reference Model for Intelligent Composable Business Applications
 

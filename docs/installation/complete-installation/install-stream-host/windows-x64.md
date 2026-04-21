@@ -4,14 +4,14 @@
 
 ### Downloads
 
-Follow the instructions in the [Deploy Stream Host](./index.md) guide to download the connection profile and installer.
+Follow the instructions in the [Install Stream Host](./index.md) guide to download the connection profile and installer.
 
 ### Hardware and Software
 
 XMPro Stream Host requires certain hardware and software specifications in order to install and run. Complete these steps in the **1. Preparation** guide:
 
-1. Meet the **hardware** requirements
-2. Install the **software** requirements
+1. Meet the [**hardware** requirements](../../install.md#hardware-requirements)
+2. Install the [**software** requirements](../../install.md#software-requirements)
 
 ## Initial Steps
 
@@ -83,4 +83,8 @@ If you decide to manually set up the connection settings for the Stream Host, yo
 
 ![Manual settings configuration](../../../images/image-1391.png)
 
-Your Stream Host installation is now complete.
+## Next Step: Agents & Connectors
+
+The stream host installation is complete. Please click below to install the default Agents & Connectors:
+
+- [Install Connectors](../install-connectors.md)

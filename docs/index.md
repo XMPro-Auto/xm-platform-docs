@@ -9,7 +9,8 @@
 
 - [Icon Library](resources/icon-library.md)
 - [Platform Security](resources/platform-security.md)
-- [Practice Notes](resources/practice-notes/index.md)
+- [Sizing Guideline](resources/sizing-guideline.md)
+- [What's New in 4.4](resources/whats-new/whats-new-in-4.4.md)
 
 ## Concepts
 
@@ -64,17 +65,36 @@
 - [Subscriptions](administration/subscriptions-admin/index.md)
 - [Users](administration/users/index.md)
 
-## [Deployment](installation/overview.md)
+## Installation
 
-- [Deploy XMPro](installation/deployment/index.md)
-- [Post-deployment](installation/complete-installation/index.md)
+- [Overview](installation/overview.md)
+- [1. Preparation](installation/install.md)
+- [2. Install XMPro](installation/deployment/index.md)
+- [3. Complete Installation](installation/complete-installation/index.md)
 
-## Technical Reference
+## Release Notes
 
-- [Mosquitto MQTT Broker](technical-reference/mosquitto-mqtt-broker.md)
-- [OAuth SMTP Configuration](technical-reference/oauth-smtp-configuration.md)
-- [Redis Cache Implementation](technical-reference/redis-cache-implementation.md)
-- [Health Checks](technical-reference/health-checks.md)
-- [XMPro Log Events](technical-reference/xmpro-log-events/index.md)
-
-## [Release Notes](release-notes/index.md)
+- [v4.4.22](release-notes/v4.4.22.md)
+- [v4.4.21](release-notes/v4.4.21.md)
+- [v4.4.20](release-notes/v4.4.20.md)
+- [v4.4.19](release-notes/v4.4.19.md)
+- [v4.4.18](release-notes/v4.4.18.md)
+- [v4.4.17](release-notes/v4.4.17.md)
+- [v4.4.16](release-notes/v4.4.16.md)
+- [v4.4.15](release-notes/v4.4.15.md)
+- [v4.4.14](release-notes/v4.4.14.md)
+- [v4.4.13](release-notes/v4.4.13.md)
+- [v4.4.12](release-notes/v4.4.12.md)
+- [v4.4.11](release-notes/v4.4.11.md)
+- [v4.4.10](release-notes/v4.4.10.md)
+- [v4.4.9](release-notes/v4.4.9.md)
+- [v4.4.8](release-notes/v4.4.8.md)
+- [v4.4.7](release-notes/v4.4.7.md)
+- [v4.4.6](release-notes/v4.4.6.md)
+- [v4.4.5](release-notes/v4.4.5.md)
+- [v4.4.4](release-notes/v4.4.4.md)
+- [v4.4.3](release-notes/v4.4.3.md)
+- [v4.4.2](release-notes/v4.4.2.md)
+- [v4.4.1](release-notes/v4.4.1.md)
+- [v4.4.0](release-notes/v4.4.0.md)
+- [Archived](release-notes/archived/index.md)
