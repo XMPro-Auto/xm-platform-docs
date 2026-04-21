@@ -50,7 +50,7 @@ Basic blocks are the fundamental building blocks of XMPro applications. They pro
 
 ### Form with Various Input Types
 
-```
+```text
 Box (Form Container)
 ├── Field (Name)
 │   ├── Textbox
@@ -70,11 +70,11 @@ Box (Form Container)
 ├── Box (Buttons)
 │   ├── Button (Submit)
 │   ├── Button (Cancel)
-```
+```text
 
 ### Data Display
 
-```
+```text
 Box (Data Display Container)
 ├── Data Grid
 │   ├── Column (ID)
@@ -85,11 +85,11 @@ Box (Data Display Container)
 │   ├── Column (Actions)
 │   │   ├── Button (Edit)
 │   │   ├── Button (Delete)
-```
+```text
 
 ### Search and Filter
 
-```
+```text
 Box (Search Container)
 ├── Field (Search)
 │   ├── Textbox
@@ -101,6 +101,6 @@ Box (Search Container)
 │   ├── Date Selector (To)
 ├── Field (Price Range)
 │   ├── Range Slider
-```
+```text
 
 By effectively using basic blocks, you can create intuitive, functional, and user-friendly applications that meet your users' needs.

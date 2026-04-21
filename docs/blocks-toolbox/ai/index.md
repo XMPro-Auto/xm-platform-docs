@@ -27,7 +27,7 @@ AI blocks in XMPro App Designer provide powerful artificial intelligence capabil
 
 ### Customer Support Assistant
 
-```
+```text
 Box (Support Assistant Container)
 ├── Text (Welcome message)
 ├── ChatGPT Copilot
@@ -39,11 +39,11 @@ Box (Support Assistant Container)
 │   │   ├── Message History
 │   │   ├── User Input
 │   │   ├── Send Button
-```
+```text
 
 ### Document Analysis and Summarization
 
-```
+```text
 Box (Document Analysis Container)
 ├── File Uploader
 │   ├── Button (Upload Document)
@@ -56,11 +56,11 @@ Box (Document Analysis Container)
 │   │   ├── Text (Summary)
 │   │   ├── Text (Key Points)
 │   │   ├── Text (Recommendations)
-```
+```text
 
 ### Data Insights Assistant
 
-```
+```text
 Box (Data Insights Container)
 ├── Data Grid (Data Display)
 ├── ChatGPT Copilot
@@ -75,6 +75,6 @@ Box (Data Insights Container)
 ├── Box (Insights Display)
 │   ├── Text (Generated Insights)
 │   ├── Chart (Visualization)
-```
+```text
 
 By effectively integrating AI blocks into your applications, you can provide intelligent, context-aware experiences that enhance user productivity, provide valuable insights, and automate complex tasks. These AI-powered features can significantly improve the value and capabilities of your XMPro applications.

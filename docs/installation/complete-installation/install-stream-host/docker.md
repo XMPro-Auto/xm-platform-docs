@@ -40,7 +40,7 @@ These settings can be found in Data Stream Designer:
 
 Below is the XMPro Docker Stream Host repository.
 
-```
+```text
 xmpro.azurecr.io/stream-host
 ```
 
@@ -50,13 +50,13 @@ xmpro.azurecr.io/stream-host
 
 All images are tagged with their version number. For example:
 
-```
-xmpro.azurecr.io/stream-host:4.6.0
+```text
+xmpro.azurecr.io/stream-host:5.0.0-alpha
 ```
 
 The `latest` tag points to the most recent release:
 
-```
+```text
 xmpro.azurecr.io/stream-host:latest
 ```
 
@@ -69,9 +69,9 @@ A Stream Host running a Data Stream must provide the capabilities to run each Ag
 
 | Image Name | Description |
 | --- | --- |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim` | Debian (Default) |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim-python3.12` | Debian with Python |
-| `xmpro.azurecr.io/stream-host:4.6.0-alpine3.21` | Alpine |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-bookworm-slim` | Debian (Default) |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-bookworm-slim-python3.12` | Debian with Python |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-alpine3.21` | Alpine |
 
 ### Choosing the Right Image
 
@@ -92,7 +92,7 @@ numpy==1.26.3
 
 Or the **`SH_PIP_MODULES`** environment variable:
 
-```
+```bash
 SH_PIP_MODULES = pandas==2.1.4 numpy==1.26.3
 ```
 
@@ -100,7 +100,7 @@ SH_PIP_MODULES = pandas==2.1.4 numpy==1.26.3
 
 Specify the location of your `requirements.txt` file using the `PIP_REQUIREMENTS_PATH` environment variable:
 
-```
+```bash
  # Powershell and Bash Terminal
  -v "<path_to_your_solution>:/opt/"
  -e PIP_REQUIREMENTS_PATH="/opt"
@@ -118,7 +118,7 @@ volumes:
 
 To install additional system packages (APK/APT), you can install it using environment variables:
 
-```
+```bash
 ADDITIONAL_INSTALLS=git
 ```
 
@@ -245,13 +245,13 @@ Replace `<values>` with your actual configuration settings.
 
 Start the Stream Host:
 
-```
+```bash
 docker-compose up -d stream-host
 ```
 
 Stop the Stream Host:
 
-```
+```bash
 docker-compose down
 ```
 

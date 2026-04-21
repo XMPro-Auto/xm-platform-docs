@@ -1,7 +1,7 @@
 # Redis Cache Implementation
 
 > [!NOTE]
-> For Azure Terraform deployments, see the [Azure Terraform Implementation Guide](../installation/deployment/azure-terraform/implementation-guide.md#configure-autoscale) to enable autoscaling with Redis.
+> For Azure Terraform deployments, Redis autoscaling is automatically configured when enabled.
 
 ## Introduction
 
@@ -23,7 +23,7 @@ XMPro uses Redis to store data for caching and passing through data for SignalR.
 
 ### Data Caching
 
-- **Purpose**: Caches real-time Data Stream data sent by the [XMPro App Agent](https://xmpro.gitbook.io/xmpro-app/) to App Designer via the [Data Streams Connector](https://xmpro.gitbook.io/data-streams-connector/) Data Source. This allows preservation of temporary data even if the App Designer server restarts and avoids consuming the server's memory.
+- **Purpose**: Caches real-time Data Stream data sent by the [XMPro App Agent](https://xmpro.gitbook.io/integrations/xmpro-app/) to App Designer via the [Data Streams Connector](https://xmpro.gitbook.io/integrations/data-streams-connector/) Data Source. This allows preservation of temporary data even if the App Designer server restarts and avoids consuming the server's memory.
 - **Structure**: Key Values are stored in the Redis Cache as a mix of Hash and List types. Groups of Keys are created for each Connection created with the **Data Streams Connector**. The keys are prefixed to indicate their grouping with the following format: `DS:<AD Connection Id>-<DS Stream Object Id>:*`
 
 ### SignalR Backplane
@@ -33,7 +33,7 @@ XMPro uses Redis to store data for caching and passing through data for SignalR.
 
 ## Redis Cache Capacity and Expiry Configuration in XMPro
 
-The [XMPro App Agent](https://xmpro.gitbook.io/xmpro-app/how-to-use/configuration-guide#server) and [Data Streams Connector](https://xmpro.gitbook.io/data-streams-connector/how-to-use/configuration#cache) provide options to configure how data is stored: Cache Size limits, Sliding Expiry, and Cache Clearing.
+The [XMPro App Agent](https://xmpro.gitbook.io/integrations/xmpro-app/how-to-use/configuration-guide#server) and [Data Streams Connector](https://xmpro.gitbook.io/integrations/data-streams-connector/how-to-use/configuration#cache) provide options to configure how data is stored: Cache Size limits, Sliding Expiry, and Cache Clearing.
 
 1. **Cache Size Limits**:
    - XMPro implements its own cache size management via the Agent and Connector
@@ -105,7 +105,7 @@ When a Redis server reaches its memory capacity limits, the impact on the XMPro 
 ## Redis Server Configuration
 
 > [!NOTE]
-> For Azure Terraform deployments, see the [Azure Terraform Implementation Guide](../installation/deployment/azure-terraform/implementation-guide.md#configure-autoscale) for details on how to enable autoscaling with Redis.
+> For Azure Terraform deployments, Redis autoscaling is automatically configured when enabled.
 
 ### Connection Configuration
 

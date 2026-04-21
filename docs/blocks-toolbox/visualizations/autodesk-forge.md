@@ -54,7 +54,7 @@ An option to upload a JavaScript file so the user can interact with the model as
 
 Template:
 
-```
+```javascript
 class {Class Name} extends Autodesk.Viewing.Extension {
     load() {
   //script when extension is loaded

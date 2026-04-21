@@ -22,9 +22,9 @@ Each server in your airgapped deployment must meet the standard prerequisites. S
 From a machine with internet access, download these files:
 
 1. **Installer scripts:**
-   - `https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1`
-   - `https://download.app.xmpro.com/4.6.0/manifest.json`
-   - (Optional) `https://download.app.xmpro.com/4.6.0/install-xmpro-prerequisites.ps1`
+   - `https://download.app.xmpro.com/5.0.0-alpha/install-xmpro-application.ps1`
+   - `https://download.app.xmpro.com/5.0.0-alpha/manifest.json`
+   - (Optional) `https://download.app.xmpro.com/5.0.0-alpha/install-xmpro-prerequisites.ps1`
 
 2. **Product packages:**
    - Open `manifest.json` in a text editor
@@ -36,7 +36,7 @@ Use this PowerShell script to automatically download all files from manifest.jso
 
 ```powershell
 # Download manifest.json first
-$manifestUrl = "https://download.app.xmpro.com/4.6.0/manifest.json"
+$manifestUrl = "https://download.app.xmpro.com/5.0.0-alpha/manifest.json"
 $outputDir = "C:\XMPro-Install"
 New-Item -Path $outputDir -ItemType Directory -Force | Out-Null
 
@@ -60,17 +60,17 @@ Write-Host "All files downloaded to $outputDir"
 
 On the Windows Server (offline), create a directory and place all files together:
 
-```
+```text
 C:\XMPro-Install\
 ├── install-xmpro-application.ps1
 ├── manifest.json
-├── SM-v4.6.0.zip
-├── AD-v4.6.0.zip
-├── DS-v4.6.0.zip
-├── SM.Database.Console-v4.6.0.exe
-├── AD.Database.Console-v4.6.0.exe
-├── DS.Database.Console-v4.6.0.exe
-└── StreamHost-win-x64-v4.6.0.exe
+├── SM-v5.0.0-alpha.zip
+├── AD-v5.0.0-alpha.zip
+├── DS-v5.0.0-alpha.zip
+├── SM.Database.Console-v5.0.0-alpha.exe
+├── AD.Database.Console-v5.0.0-alpha.exe
+├── DS.Database.Console-v5.0.0-alpha.exe
+└── StreamHost-win-x64-v5.0.0-alpha.exe
 ```
 
 ### Step 2: Run Installer

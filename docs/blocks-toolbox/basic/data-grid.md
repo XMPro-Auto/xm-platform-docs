@@ -87,15 +87,6 @@ Choose how the select all and deselect all will be applied to the Data Grid:
 > [!NOTE]
 > Note: applies when paging and multiple selection are enabled.
 
-#### Multiple Selection Mode
-
-Choose how the select all and deselect all will be applied to the Data Grid:
-
-* Page - recommended for large datasets (200+ rows).
-* All Pages - recommended for small datasets.
-
-Note: applies when paging and multiple selection are enabled.
-
 #### Allow Adding
 
 Add button will be displayed and the user can add/insert rows by clicking on it.
@@ -131,7 +122,7 @@ Grid data can be edited in several modes. Set the Edit Mode property to specify 
 | Cell | A user edits data cell by cell. Changes are saved once a cell loses focus, or discarded if a user presses Esc.<br>![Cell Mode](../../images/image-576.png) |
 | Row | A user edits data row by row. When a user clicks an "Edit" button in the right-most column, the corresponding row enters the editing state, and the "Save" and "Cancel" buttons appear in the right-most column. Pressing the "Save" button will update your data source immediately.<br>![Row Mode](../../images/image-1095.png) |
 
-#### Allow Search
+#### Allow Search (Search Bar)
 
 This will show a search bar at the top of the Data Grid.
 

@@ -87,7 +87,7 @@ To append a back URL, follow these steps:
 
 6\. Configure the URL with back parameters, similar to the below:
 
-```
+```text
 "https://xmad-sample.azurewebsites.net/viewalert;id="+"12345"+";backUrl=render;backParams=\{\\"appId\\":\\""+appId+"\\",\\"pageId\\":\\""+pageId+"\\",\\"categoryName\\":\\""+categoryName+"\\",\\"appVersion\\":\\""+appVersion+"\\"\\}"
 ```
 

@@ -31,7 +31,7 @@ If there is a single batch, data is split into 80 separate messages by an agent 
 
 The v4.4.0 release includes a Stream Host with superior "buffer" functionality.
 
-The new [Window](https://xmpro.gitbook.io/window) Agent supports a delay in transmitting events to the next Agent in a Data Stream. This enhancement aims to mitigate the risk of excessive event data buffering within the Stream Host. The flow of events can be regulated to prevent potential overload scenarios, ensuring smoother data processing and system stability.
+The new [Window](https://xmpro.gitbook.io/integrations/window) Agent supports a delay in transmitting events to the next Agent in a Data Stream. This enhancement aims to mitigate the risk of excessive event data buffering within the Stream Host. The flow of events can be regulated to prevent potential overload scenarios, ensuring smoother data processing and system stability.
 
 ## Data Stream Design Considerations and Patterns
 

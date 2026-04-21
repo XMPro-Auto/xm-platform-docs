@@ -9,7 +9,6 @@
 
 - [Icon Library](resources/icon-library.md)
 - [Platform Security](resources/platform-security.md)
-- [Practice Notes](resources/practice-notes/index.md)
 
 ## Concepts
 

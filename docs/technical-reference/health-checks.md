@@ -1,7 +1,7 @@
 # Health Checks
 
 > [!NOTE]
-> For Azure Terraform deployments, see the [Azure Terraform Implementation Guide](../installation/deployment/azure-terraform/implementation-guide.md#health-checks-configuration) for automated health checks configuration.
+> For Azure Terraform deployments, health checks are automatically configured and enabled.
 
 <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/W1LWcSUrgTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -52,9 +52,9 @@ The Health UI provides a user-friendly display of health check results:
 ## Configure Health Checks
 
 > [!NOTE]
-> For Azure Terraform deployments, health checks are automatically configured and enabled. See the [Azure Terraform Implementation Guide](../installation/deployment/azure-terraform/implementation-guide.md#health-checks-configuration) for details.
+> For Azure Terraform deployments, health checks are automatically configured and enabled.
 
 ## Adding Third-Party Endpoints
 
 > [!NOTE]
-> For Azure Terraform deployments, third-party endpoints can be configured through environment variables. See the [Azure Terraform Implementation Guide](../installation/deployment/azure-terraform/implementation-guide.md#health-checks-configuration) for details.
+> For Azure Terraform deployments, third-party endpoints can be configured through environment variables.

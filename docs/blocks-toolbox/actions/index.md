@@ -29,7 +29,7 @@ Actions blocks in XMPro App Designer enable user interactions and trigger functi
 
 ### Form Submission
 
-```
+```text
 Box (Form Container)
 ├── Field (Name)
 │   ├── Textbox
@@ -42,11 +42,11 @@ Box (Form Container)
 │   │   ├── On Click (Submit Form)
 │   ├── Button (Cancel)
 │   │   ├── On Click (Navigate to Home)
-```
+```text
 
 ### Data Grid with Actions
 
-```
+```text
 Box (Data Grid Container)
 ├── Data Grid
 │   ├── Column (ID)
@@ -62,11 +62,11 @@ Box (Data Grid Container)
 │   │   ├── On Click (Navigate to Add Page)
 │   ├── Button (Refresh)
 │   │   ├── On Click (Refresh Data)
-```
+```text
 
 ### Navigation Menu
 
-```
+```text
 Box (Navigation Container)
 ├── Menu
 │   ├── Menu Item (Home)
@@ -79,11 +79,11 @@ Box (Navigation Container)
 │   │   ├── Hyperlink (Navigate to About)
 │   ├── Menu Item (Contact)
 │   │   ├── Hyperlink (Navigate to Contact)
-```
+```text
 
 ### Dashboard with Action Cards
 
-```
+```text
 Box (Dashboard Container)
 ├── Layout Grid
 │   ├── Box Hyperlink (Navigate to Sales)
@@ -98,6 +98,6 @@ Box (Dashboard Container)
 │   │   ├── Card (Customers)
 │   │   │   ├── Text (Customer Summary)
 │   │   │   ├── Chart (Customer Chart)
-```
+```text
 
 By effectively using actions blocks, you can create interactive and responsive applications that provide a seamless user experience. These blocks enable users to navigate through your application, interact with data, and trigger functionality that meets their needs.

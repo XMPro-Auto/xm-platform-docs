@@ -44,6 +44,8 @@ This specified the format of the date. The options are date, time, or date and t
 
 This specifies the way the calendar or clock is displayed to the user. Options for this include default, calendar, list, rollers, or native.
 
+The native option uses the date format based on the device's local settings, while the default and calendar options follow the browser's display language.
+
 ![Picker Type - Default](../../images/blocks-toolbox/image-1615.png)
 
 ![Picker Type - Calendar](../../images/blocks-toolbox/image-1805.png)

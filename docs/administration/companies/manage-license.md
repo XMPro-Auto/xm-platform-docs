@@ -6,9 +6,6 @@
 > [!NOTE]
 > Each product must have at least one user assigned an admin role, to configure product admin settings and respond to a license expiry warning.
 
-> [!NOTE]
-> As noted [here](../../concepts/xmpro-ai/xmpro-notebook.md#licensing), separate licenses are required for AI and XMPro Notebook to access the AI functionality.
-
 ## Request a new License
 
 If a company needs to be given access to a product, such as Data Stream Designer, the Company Administrator for that company needs to submit a license request - which is approved by a Global Administrator.

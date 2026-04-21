@@ -264,7 +264,7 @@ az resource list --resource-group $(terraform output -raw resource_group_name) -
    ```
 
 4. **Contact Support:**
-   - Use the [XMPro Support Portal](javascript:window.open('https://xmpro.na1.teamsupport.com/login/user','_blank'))
+   - Use the [XMPro Support Portal](https://xmpro.na1.teamsupport.com/login/user)
    - Include your error messages
    - Describe what step failed
 

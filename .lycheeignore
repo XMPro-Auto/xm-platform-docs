@@ -1,60 +1,43 @@
-# .lycheeignore — patterns excluded from lychee link checking
-# Each line is a regular expression matched against the full URL.
+# Lychee link checker exclusion patterns
+# Patterns are treated as regular expressions
 
-# ── Placeholder / example URLs ────────────────────────────────────────────────
-# These are documentation examples that are never real addresses.
-https?://your-xmpro-instance\.com.*
-https?://dsserver/.*
-https?://adfs\.domain\.com.*
-https?://mysampleserver.*
-https?://xmpro-ad-sample\.azurewebsites\.net.*
+# ── Placeholder / example URLs ──────────────────────────────────────────────
+# These appear in documentation as illustrative examples and are not real sites.
+https://your-xmpro-instance\.com
+https?://dsserver
+https://adfs\.domain\.com
+https://mysampleserver
+https://xmpro-ad-sample\.azurewebsites\.net
 
-# ── Sites that block CI bots ──────────────────────────────────────────────────
-# McKinsey returns HTTP/2 protocol errors for automated requests.
-https?://(www\.)?mckinsey\.com.*
+# ── Old GitBook integration catalogue ────────────────────────────────────────
+# The XMPro integrations GitBook site has been retired.
+# Links are kept for reference but cannot be resolved.
+https://xmpro\.gitbook\.io
 
-# ── Old GitBook integration documentation ─────────────────────────────────────
-# xmpro.gitbook.io is no longer active; links throughout the docs
-# point to agent/connector reference pages that return 404.
-https?://xmpro\.gitbook\.io.*
+# ── GitHub Pages for Blueprints / Accelerators / Patterns ───────────────────
+# The GitHub Pages site is no longer maintained; individual pattern pages 404.
+https://xmpro\.github\.io/Blueprints-Accelerators-Patterns
 
-# ── Blueprints-Accelerators-Patterns GitHub Pages ─────────────────────────────
-# The individual pattern sub-pages (e.g. /patterns/Asset-Monitoring-*/…) return
-# 404; only the index page is live.
-https?://xmpro\.github\.io/Blueprints-Accelerators-Patterns/patterns/.*
+# ── Private / restricted GitHub repositories ─────────────────────────────────
+# The terraform-xmpro-azure repo is private / restricted; CI cannot access it.
+https://github\.com/XMPro/terraform-xmpro-azure
 
-# ── Blueprints-Accelerators-Patterns accelerator paths ────────────────────────
-# The /accelerators/ tree paths on GitHub — repo was reorganised to lowercase.
-https?://github\.com/XMPro/Blueprints-Accelerators-Patterns/tree/master/[Aa]ccelerators/.*
+# The xmpro-development repo is private / restricted; CI cannot access it.
+https://github\.com/XMPro/xmpro-development
 
-# ── terraform-xmpro-azure repository ──────────────────────────────────────────
-# This repo is private / access-restricted; CI runners receive 404.
-https?://github\.com/XMPro/terraform-xmpro-azure.*
+# ── External sites that block automated CI requests ──────────────────────────
+# McKinsey returns HTTP/2 protocol errors for non-browser user-agents.
+https://www\.mckinsey\.com
+https://mckinsey\.com
 
-# ── xmpro-development repository ──────────────────────────────────────────────
-# Private repo; returns 404 to CI runners.
-https?://github\.com/XMPro/xmpro-development.*
+# community.xmpro.com returns network errors for CI bots.
+https://community\.xmpro\.com
 
-# ── community.xmpro.com ────────────────────────────────────────────────────────
-# Community portal returns network errors in CI environments.
-https?://community\.xmpro\.com.*
-
-# ── portal.azure.com ──────────────────────────────────────────────────────────
-# Azure Portal returns HTTP 403 to automated bots.
-https?://portal\.azure\.com.*
-
-# ── w3schools.com ─────────────────────────────────────────────────────────────
-# W3Schools returns HTTP 403 to automated/CI bots.
-https?://(www\.)?w3schools\.com.*
-
-# ── courses.xmpro.com ─────────────────────────────────────────────────────────
-# XMPro learning portal times out in CI environments.
-https?://courses\.xmpro\.com.*
-
-# ── powerbi.microsoft.com ─────────────────────────────────────────────────────
-# Power BI portal blocks automated requests.
-https?://powerbi\.microsoft\.com.*
-
-# ── azure.microsoft.com ───────────────────────────────────────────────────────
-# Azure marketing/docs site blocks CI bots.
-https?://azure\.microsoft\.com.*
+# Sites that return 403 or timeout for automated requests
+https://www\.w3schools\.com
+https://portal\.azure\.com
+https://courses\.xmpro\.com
+https://powerbi\.microsoft\.com
+https://azure\.microsoft\.com
+https://openai\.com
+https://platform\.openai\.com

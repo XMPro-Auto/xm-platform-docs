@@ -27,11 +27,11 @@ Software Composition Analysis scans all the components used in an application fo
 
 | Product | SAST Score | DAST Score | Date |
 | --- | --- | --- | --- |
-| Subscription Manager 4.6.0 | 98 | 94 | 18 Mar 26 |
-| App Designer 4.6.0 | 95 | 95 | 18 Mar 26 |
-| Data Stream Designer 4.6.0 | 99 | 95 | 18 Mar 26 |
-| XMPro AI 4.6.0 | 95 | 95 | 18 Mar 26 |
-| WorkFlow | 95 | 95 | 18 Mar 26 |
+| Subscription Manager 4.4.18 | 92 | 95 | 20 Mar 25 |
+| App Designer 4.4.18 | 78 | 95 | 20 Mar 25 |
+| Data Stream Designer 4.4.18 | 89 | 95 | 20 Mar 25 |
+| XMPro AI 4.4.18 | 96 | 95 | 20 Mar 25 |
+| WorkFlow | 97 | 91 | 20 Mar 25 |
 
 ## Container Security Scanning
 
@@ -47,7 +47,7 @@ Each scan report includes:
 ### Container Scan Reports
 
 | Version | Scan Date | Scanner | Images Scanned | Report |
-|---------|-----------|---------|----------------|--------|
+| --- | --- | --- | --- | --- |
 | 4.6.0 | 17 Mar 26 | Trivy v0.61.0 | 6 | [View Report](container-scan-4-6-0.md) |
 
 ## Support and Recommendations

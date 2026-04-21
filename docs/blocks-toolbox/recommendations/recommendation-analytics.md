@@ -3,7 +3,7 @@
 
 Alert Analytics is an area in which the number of Alerts for an Identifier over a period of time can be compared - with an optional [alert ranking](../../concepts/recommendation/rule.md#alert-ranking) filter.
 
-The Identifiers of an Alert is defined in the [Run Recommendation Agent](https://xmpro.gitbook.io/run-recommendation/how-to-use/configuration#entity) of the Recommendation's Data Stream. The Entity Identifier is mandatory, whereas the Asset, KPI, and Process Identifiers are optional.
+The Identifiers of an Alert is defined in the [Run Recommendation Agent](https://xmpro.gitbook.io/integrations/run-recommendation/how-to-use/configuration#entity) of the Recommendation's Data Stream. The Entity Identifier is mandatory, whereas the Asset, KPI, and Process Identifiers are optional.
 
 The analytics section compares the currently viewed period of alerts with the previous period and displays the difference as a percentage. The statistics compared are:
 

@@ -27,7 +27,7 @@ Device Input blocks allow users to interact with your XMPro applications using v
 
 ### Location-Based Asset Tracking
 
-```
+```text
 Box (Asset Tracking Container)
 ├── Location Capture
 │   ├── Button (Capture Location)
@@ -42,11 +42,11 @@ Box (Asset Tracking Container)
 ├── Box (Buttons)
 │   ├── Button (Save)
 │   ├── Button (Cancel)
-```
+```text
 
 ### Field Inspection with Photo Documentation
 
-```
+```text
 Box (Inspection Container)
 ├── Field (Inspection ID)
 │   ├── Textbox
@@ -67,11 +67,11 @@ Box (Inspection Container)
 ├── Box (Buttons)
 │   ├── Button (Submit)
 │   ├── Button (Save Draft)
-```
+```text
 
 ### Mobile Data Collection
 
-```
+```text
 Box (Data Collection Container)
 ├── Location Capture
 │   ├── Button (Capture Location)
@@ -90,6 +90,6 @@ Box (Data Collection Container)
 ├── Box (Buttons)
 │   ├── Button (Submit)
 │   ├── Button (Save Draft)
-```
+```text
 
 By effectively using device input blocks, you can create applications that leverage the capabilities of modern devices to capture and process real-world data, enabling a wide range of use cases from field inspections to asset tracking and beyond.

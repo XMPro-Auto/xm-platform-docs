@@ -255,7 +255,7 @@ When authentication is needed to dynamically load 2D and 3D views of your design
 
 #### Autodesk: Authentication using Connector
 
-Leverage the [REST API Connector](https://xmpro.gitbook.io/rest-api-connector/) to get Token from the authentication service and the [Data Source](metablock.md#data-source) to pass the token to the Metablock.
+Leverage the [REST API Connector](https://xmpro.gitbook.io/integrations/rest-api-connector/) to get Token from the authentication service and the [Data Source](metablock.md#data-source) to pass the token to the Metablock.
 
 > [!NOTE]
 > **GitHub Repository:** APS View with Authentication
@@ -299,7 +299,7 @@ Adapt the sample code to the Metablock format. For simplicity, the HTML, CSS & J
 ```
 
 ```css
-/* main.css */
+/_ main.css _/
 h1 {
     font-family: Arial, sans-serif; 
     color : #333;
@@ -537,7 +537,7 @@ From v4.4.18, you can load external script files by including a script block - t
 
 You can also reference resources (js, css, image) uploaded on your **App Files** folder by following the correct format for the URL when referencing. Prefix the path with **"./AppFiles/"** and append the path of the App Files resource:
 
-```
+```text
 "./AppFiles/{path on the App Files}"
 ```
 
@@ -547,7 +547,7 @@ See the following example for the html that links different resources from the A
 
 For an App Files folder structure that looks like this:
 
-```
+```text
 offline_files/
 ├── offline_image.png
 ├── offline-script.js

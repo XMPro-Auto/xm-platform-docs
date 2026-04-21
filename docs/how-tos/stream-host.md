@@ -130,7 +130,7 @@ This option can be applied to any Stream Host install scenario, although it is b
 
 Create an environment variable that is applied to a running Stream Host instance, prefixing the name of the variable that should be overridden with `xmvariable__`
 
-```
+```bash
 xmvariable__NameOfVariable1=foo
 xmvariable__NameOfVariable2=bar
 xmvariable__NameOfVariable3=noop

@@ -22,8 +22,8 @@ This Score also helps the alert recipient to understand its relative importance.
 
 This feature allows recommendation authors to assign numerical values (1-10) to various aspects during configuration. These values are then multiplied, resulting in an alert score.
 
-```
-score = recommendation factor * category factor * rule factor * optional factor
+```text
+score = recommendation factor _ category factor _ rule factor * optional factor
 ```
 
 The score is calculated at the time the alert is generated and is not recalculated should any of the factors be updated.

@@ -23,7 +23,7 @@ The Script property is required for the D3 Visualization Block.
 
 Script template:
 
-```
+```html
 <div id="myCanvas"></div>
 <script src="../../content/scripts/d3.js"></script>
 

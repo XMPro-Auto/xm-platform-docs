@@ -37,14 +37,6 @@ Optionally override the default [landing page](../concepts/landing-pages.md) to 
 
 #### Enable Mobile App
 
-Optionally override the default [landing page](../concepts/landing-pages.md) to use a published Application for the whole company when using a desktop computer.
-
-#### Mobile  Landing Page
-
-Optionally override the default [landing page](../concepts/landing-pages.md) to use a published Application for the whole company when using a mobile device.
-
-#### Enable Mobile App
-
 _Added v4.4.4_
 
 This defaults to true on new installations. Toggle it off to hide the mobile app icon on the toolbar.
@@ -94,7 +86,7 @@ To improve performance and ensure users always have the latest version of your s
 
 1. **Use version parameters** in your script URL to control caching:
 
-    ```
+    ```html
     <script defer src="https://example.com/your-script.js?v=1.0.2"></script>
     ```
 

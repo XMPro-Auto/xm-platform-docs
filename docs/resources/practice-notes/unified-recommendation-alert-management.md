@@ -32,7 +32,7 @@ We call these patterns 'Composable Business Capabilities'. (CBC[1]) The customer
 
 [1] Gartner Reference Model for Intelligent Composable Business Applications
 
-[2] <https://xmpro.github.io/Blueprints-Accelerators-Patterns/>
+[2] <https://github.com/XMPro/Blueprints-Accelerators-Patterns>
 
 [3] Gartner Reference Model for Intelligent Composable Business Applications
 
@@ -485,7 +485,7 @@ After calculating individual occurrence scores, aggregate them into a single ass
    Asset Occurrence = max(O₁, O₂, ..., Oₙ)
    Where O₁, O₂, etc. are occurrence scores for each alert type.
 2. Weighted Average: (_Recommended_)
-   Asset Occurrence = (w₁ _O₁ + w₂_ O₂ + ... + wₙ * Oₙ) / (w₁ + w₂ + ... + wₙ)
+   Asset Occurrence = (w₁ _O₁ + w₂_ O₂ + ... + wₙ × Oₙ) / (w₁ + w₂ + ... + wₙ)
    Where w₁, w₂, etc. are weights assigned to each alert type based on their importance.
 3. Logarithmic Sum:
    Asset Occurrence = exp(log(O₁) + log(O₂) + ... + log(Oₙ))

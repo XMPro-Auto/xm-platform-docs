@@ -132,7 +132,7 @@ To remove a file from the list, click the _Delete_ button next to the file name 
 | Agent | The DLL file that was generated when you built the project containing your Agent source code. |
 | Reference | Additional DLL file(s) referenced by the Agent File, such as Newtonsoft.Json. <br>You do not need to upload the _XMIoT.Framework.dll_ file as this DLL is automatically included. |
 | Resource | Additional DLL file(s) needed by the Reference File. |
-| Zip | The Stream Host decompresses the file, while maintaining the folder structure, so that Agents such as the [Meta Agent](https://xmpro.gitbook.io/meta/how-to-use/configuration#export-agent) can run external source code and self package. |
+| Zip | The Stream Host decompresses the file, while maintaining the folder structure, so that Agents such as the [Meta Agent](https://xmpro.gitbook.io/integrations/meta/how-to-use/configuration#export-agent) can run external source code and self package. |
 
 ![References configuration](../../images/references-config.png)
 

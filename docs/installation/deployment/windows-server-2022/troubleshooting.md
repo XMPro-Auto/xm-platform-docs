@@ -195,7 +195,7 @@ iisreset
 Rerun the installer and answer `Y` (Yes) when prompted "Trust SQL Server Certificate?":
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/5.0.0-alpha/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, select:
@@ -280,7 +280,7 @@ Database provisioning takes longer than the migration tool's timeout period.
 Simply rerun the installation script. The database has been created in the background and the installer will detect it exists and continue with the migration:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/5.0.0-alpha/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 > [!NOTE]
