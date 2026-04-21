@@ -195,7 +195,7 @@ iisreset
 Rerun the installer and answer `Y` (Yes) when prompted "Trust SQL Server Certificate?":
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, select:
@@ -280,7 +280,7 @@ Database provisioning takes longer than the migration tool's timeout period.
 Simply rerun the installation script. The database has been created in the background and the installer will detect it exists and continue with the migration:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 > [!NOTE]
@@ -370,7 +370,7 @@ sqlcmd -S hostname -U sa -P YourPassword -d DS -Q "DBCC CHECKDB (DS)"
 
 ```powershell
 # View Application event log
-Get-EventLog -LogName Application -Newest 50 | Where-Object {$_.Source -like "*IIS*"}
+Get-EventLog -LogName Application -Newest 50 | Where-Object {$_.Source -like "_IIS_"}
 ```
 
 **Common causes:**
@@ -587,7 +587,7 @@ iisreset
 
 ```powershell
 # Export root certificate
-Export-Certificate -Cert (Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "*XMPro Root CA*"}) -FilePath "C:\XMPro\XMProRootCA.cer"
+Export-Certificate -Cert (Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "_XMPro Root CA_"}) -FilePath "C:\XMPro\XMProRootCA.cer"
 
 # Manually import to browser:
 # - Open certificate file
@@ -614,7 +614,7 @@ Cannot access private key for certificate
 # Grant IIS application pool permission to certificate private key
 
 # Find certificate thumbprint
-Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "*hostname*"}
+Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "_hostname_"}
 
 # Grant permission using certificate MMC:
 # 1. Run: certlm.msc
@@ -636,7 +636,7 @@ Failed to load signing certificate for JWT tokens
 
 ```powershell
 # Verify JWT certificate exists
-Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "*JWT*"}
+Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -like "_JWT_"}
 ```
 
 **If certificate is missing, create a new signing certificate:**
@@ -907,7 +907,7 @@ dotnet --list-runtimes
 Get-IISAppPool | Where-Object {$_.Name -like "XMPro*"} | Format-Table Name, State
 
 # 4. Service status
-Get-Service | Where-Object {$_.Name -like "*XMPro*" -or $_.Name -like "StreamHost*"} | Format-Table Name, Status
+Get-Service | Where-Object {$_.Name -like "_XMPro_" -or $_.Name -like "StreamHost*"} | Format-Table Name, Status
 
 # 5. Recent errors
 Get-EventLog -LogName Application -EntryType Error -Newest 20 | Format-Table TimeGenerated, Source, Message

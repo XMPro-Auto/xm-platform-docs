@@ -1,6 +1,16 @@
-# v4.6 Release Notes
+# Platform
 
-This section contains the release notes for XMPro v4.6 platform, providing information about new features, improvements, and bug fixes across all core products. Key highlights include the Streams as Connectors architecture, Stream Host Event-Level Streaming architecture, OAuth SMTP support, and security enhancements across all products.
+## v4.5 Release Notes
+
+This section contains the release notes for XMPro v4.5 platform, providing information about new features, improvements, and bug fixes across all core products.
+
+> [!CAUTION]
+> Do not use v4.5.4 if you use spaces in entity names in App Designer. See Known Issues for details.
+
+> [!WARNING]
+> Security update: Mitigate high-severity vulnerabilities by upgrading all products to v4.5.1+.
+>
+> Breaking change: v4.5.4 contains a breaking change to the Azure Terraform deployment.
 
 ## Known Issues
 
@@ -15,17 +25,291 @@ This section contains the release notes for XMPro v4.6 platform, providing infor
   </thead>
   <tbody>
     <tr>
-      <td>Data Stream Designer</td>
-      <td>Ticket ID17421 Data Stream Designer Hangs on Publish/Unpublish: When you publish or unpublish a Data Stream, the browser occasionally becomes unresponsive and requires a page refresh to recover.</td>
+      <td>App Designer</td>
+      <td>Team Support 15739: Alert Action button not working as expected when an Action is also defined</td>
+      <td>v4.4.16</td>
+      <td>v4.5.4</td>
+    </tr>
+    <tr>
+      <td>App Designer</td>
+      <td>Bug 20828: Assigning or Sharing a recommendation alert results in an error message when using the Alert Action Block</td>
+      <td>v4.5.0</td>
+      <td>v4.5.3</td>
+    </tr>
+    <tr>
+      <td>App Designer</td>
+      <td>Bug 21266: Data Grid is no longer converting datetimes from UTC time to local</td>
+      <td>v4.5.0</td>
+      <td>v4.5.3</td>
+    </tr>
+    <tr>
+      <td>App Designer</td>
+      <td>Team Support 16872: Data Grid header filter does not apply local timezone formatting like it does to the columns data</td>
+      <td>v4.4.22</td>
+      <td>v4.5.4</td>
+    </tr>
+    <tr>
+      <td>App Designer</td>
+      <td>Team Support 16939: Recommendation Version misleads to a different version on Title Modification</td>
+      <td>v4.5.3</td>
+      <td>v4.5.4</td>
+    </tr>
+    <tr>
+      <td>App Designer</td>
+      <td>Team Support 17330: New input validation restrict previously valid entity names that contain spaces, affecting adding or editing data sources at design-time.</td>
+      <td>v4.5.4</td>
       <td>v4.5.5</td>
-      <td>Pending</td>
+    </tr>
+    <tr>
+      <td>Data Stream Designer</td>
+      <td>Team Support 16609: Removing 'View Collection' right causes errors, but including it exposes Collection secret</td>
+      <td>v4.5.1</td>
+      <td>v4.5.3</td>
+    </tr>
+    <tr>
+      <td>Package Manager</td>
+      <td>Team Support 15214: Sort Index does not save on Sub Groups</td>
+      <td>v4.4.19</td>
+      <td>v4.5.4</td>
+    </tr>
+    <tr>
+      <td>Stream Host</td>
+      <td>Team Support 16822: Stream Host SignalR connection interruptions require manual intervention to restore connectivity</td>
+      <td>v4.4.22</td>
+      <td>v4.5.4</td>
+    </tr>
+    <tr>
+      <td>Stream Host</td>
+      <td>Team Support 16827: Data Stream Agent continues polling after unpublish with "Error Polling - No Agent instance yet" errors</td>
+      <td>v4.4.22</td>
+      <td>v4.5.4</td>
     </tr>
   </tbody>
 </table>
 
-## v4.6.0
+## v4.5.5
 
-Date Released: 13 Mar 2026
+Date Released: 5 Dec 2025
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security</td>
+      <td>
+        <p><b>Product security and stability</b>: We've mitigated a high security vulnerability:</p>
+        <ul>
+          <li>Upgraded glob from 10.4.5 to 10.5.0 in App Designer for <a href="https://www.cve.org/CVERecord?id=CVE-2025-64756">CVE-2025-64756</a>.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 17330: <b>New input validation restrict previously valid entity names that contain spaces, affecting adding or editing data sources at design-time</b>: <i>When you add or edit data sources in App Designer, entity names containing spaces (such as "SQL Query") are rejected by validation, preventing you from saving previously valid configurations.</i><br>The overly restrictive input validation introduced in v4.5.4 has been removed. Entity names now accept spaces and other characters that match database naming requirements, restoring the ability to use naming patterns that were valid in earlier versions.</td>
+    </tr>
+  </tbody>
+</table>
+
+## v4.5.4
+
+Date Released: 26 Nov 2025
+
+> [!CAUTION]
+> Do not use v4.5.4 if you use spaces in entity names in App Designer. See Known Issues for details.
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security</td>
+      <td>
+        <p><b>Product security and stability</b>: We've mitigated security vulnerabilities and implemented comprehensive security hardening across the platform:</p>
+        <ul>
+          <li>Removed Microsoft.VisualStudio.Web.CodeGeneration.Design from App Designer for <a href="https://www.cve.org/CVERecord?id=CVE-2025-55247">CVE-2025-55247</a>.</li>
+          <li>Upgraded Node.js from 6.17.1 to 22.11.0 and resolved transitive dependency vulnerabilities (tough-cookie, form-data, unset-value, braces, jsrsasign) in Subscription Manager to remediate 1 Very High and 4 High severity Veracode vulnerabilities caused by an outdated package-lock.json file generated with npm 3.10.10.</li>
+          <li><b>Limit Data Access</b>: Implemented the Principle of Least Privilege across App Designer and Data Stream Designer by adding endpoint-level authorization to affected controllers.</li>
+          <li><b>Input Validation</b>: Implemented comprehensive input validation and sanitization using FluentValidation to affected endpoints in App Designer and Data Stream Designer.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Feature</td>
+      <td><b><a href="../installation/deployment/windows-server-2022/index.md">Windows Server 2022 deployment capabilities</a></b>: Introduced a one-click Windows installer that automates the complete deployment of XMPro platform components (Subscription Manager, App Designer, Data Stream Designer, and Stream Host) in under 30 minutes, including all prerequisites, database migrations, IIS configuration, and SSL certificate setup. The installer supports multi-server deployments and air-gapped environments, with comprehensive validation and automated rollback capabilities.</td>
+    </tr>
+    <tr>
+      <td>Deployment</td>
+      <td>
+        <p><b>Azure Terraform Deployment Enhancements</b> Providing enterprise-grade security, flexibility, and compliance:</p>
+        <ul>
+          <li><b>Azure AD Authentication for SQL Server</b>: Enables passwordless authentication using managed identities, improving security posture and eliminating the need to manage SQL passwords.</li>
+          <li><b>Custom Database Naming</b>: Supports custom database names throughout the deployment stack (including AAD SQL users and licenses containers), enabling compliance with enterprise naming conventions.</li>
+          <li><b>Private Endpoint Support</b>: Comprehensive private endpoint configuration for all XMPro App Services (AD, DS, SM, AI) with automatic DNS integration, enabling secure private network access for production deployments.</li>
+          <li><b>Configurable RBAC Authorization</b>: Added support for both Azure RBAC and legacy access policies for Key Vaults, providing deployment flexibility for different enterprise security models.</li>
+          <li><b>Removal of Hardcoded Passwords</b>: Eliminated all hardcoded passwords from Terraform modules to meet security compliance requirements.<br><span style="color:red;">Breaking change - Passwords must now be explicitly provided via tfvars files.</span></li>
+          <li><b>Redis SignalR Configuration</b>: Added Redis connection string configuration to Subscription Manager prep container, enabling proper SignalR Redis backplane for scaled deployments.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Enhancement</td>
+      <td>
+        <b>Deployment At Scale - Enhanced Authentication:</b>
+        <ul>
+          <li>New zip-based import and export endpoints allow solution developers to handle their own repository authentication without being limited to Git.</li>
+          <li>Existing Git-based endpoints have been enhanced to support nested repository URLs for Enterprise GitLab compatibility.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Enhancement</td>
+      <td>Team Support 16908: <b>Data Grid Override Values from Data Source</b>: The Data Grid now supports override values from data sources in "Batch with External Save" mode. You can now configure override values (such as BusinessRoleId) that are automatically included in insert and update payloads, ensuring data integrity when saving grid data externally.</td>
+    </tr>
+    <tr>
+      <td>Enhancement</td>
+      <td>Team Support 17151: <b>Recurrence Schedule Handling After Stream Host Restart</b>: When a Stream Host restarts, Data Streams wait for their next scheduled occurrence rather than executing immediately, ensuring predictable execution patterns and not overloading the Stream Host. Execution behavior examples were added to the <a href="../how-tos/data-streams/manage-recurrent-data-streams.md">Recurrent Data Streams</a> article.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Package Manager</b>:
+        <ul>
+          <li><b><a href="../how-tos/agents/packaging-agents.md#include-multilingual-support">Multilingual Support</a></b>: <i>Dropdown options and pre-filled field values are not translated to your selected language, appearing only in English regardless of your preferred language.</i><br>Dropdown options and pre-filled field values are now included in the translation system using TranslationMap properties.</li>
+          <li><b>Application Stability</b>: <i>You experience unexpected crashes when deleting grid controls or creating new connector packages, causing loss of work.</i><br>Package Manager now gracefully handles errors without terminating, protecting your work and providing diagnostic information for troubleshooting.</li>
+          <li>Team Support 15214: <b>Sub-Group Sort Index Persistence</b>: <i>When you reorder sub-groups in settings, the ordering reverts to the original configuration after saving, preventing you from organizing settings in your preferred logical order.</i><br>Sub-group sort index values now persist correctly after saving.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 15739: <b>Alert Action Button Execution Order</b>: <i>When you configure an Alert Action button under the Recommendations block with both a dialog action (like "Assign This Recommendation Alert") and a custom action (like navigating to a page or updating a data source), the custom action executes before the dialog opens, making the Alert Action control unusable.</i><br>The operation order has been corrected so that the dialog now opens first, allowing you to complete the dialog interaction before any custom actions execute.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 16822: <b>Stream Host SignalR Connection Stability</b>: <i>When network issues occur, you experience SignalR connection interruptions requiring manual intervention to restore connectivity to the Data Stream Designer.</i><br>SignalR connections now automatically reconnect when network interruptions occur using stateful reconnection, eliminating the need for manual intervention and maintaining your connection to the Data Stream Designer during temporary network issues.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 16827: <b>Data Stream Agent Polling Error After Unpublish</b>: <i>When you unpublish a recurring Data Stream that contains polling agents (such as SQL Context Provider), the Stream Host continues attempting to poll and reports "Error Polling - No Agent instance yet" errors. This creates confusion and unnecessary error logs in your Stream Host.</i><br>The Stream Host now terminates all polling operations when a Data Stream is unpublished, ensuring that agent instances are properly cleaned up and no further polling errors occur after unpublishing.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 16872: <b>Data Grid Header Filter Timezone Formatting</b>: <i>Date filters in Data Grid headers display dates in UTC format while the grid columns show dates in your local timezone, with inaccurate results.</i><br>Date filters in Data Grid headers now apply the same local timezone formatting as the grid columns, ensuring consistency between what you see in the cells and what you can filter by.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 16939: <b>Recommendation Version Navigation on Title Modification</b>: <i>When you modify a recommendation title and click Save, the application unexpectedly navigates you to a different recommendation version instead of staying on the current version, causing confusion and making it difficult to verify your changes.</i><br>The Save operation now maintains your current recommendation version context, allowing you to verify your updates without losing your place in the workflow.</td>
+    </tr>
+  </tbody>
+</table>
+
+## v4.5.3
+
+Date Released: 29 Sep 2025
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security</td>
+      <td><b>Enhanced Security Framework: </b>Significant security hardening across the XMPro platform, including protection against clickjacking and reverse tabnabbing attacks, improved error handling and input validation, and resolution of multiple medium-severity vulnerabilities in core dependencies. We've implemented comprehensive security header enforcement across all API controllers in the Application Designer (AD), Data Stream Designer (DS), and Subscription Manager (SM) components, upgraded JavaScript libraries to address known vulnerabilities, and enhanced cookie security attributes. Additional improvements include container-level security updates and strengthened endpoint protection to prevent unauthorized resource enumeration.</td>
+    </tr>
+    <tr>
+      <td>Enhancement</td>
+      <td><p><b>Deployment At Scale - Enhanced validation and error reporting</b>:</p>
+          <ul>
+             <li>More details are provided for individual component failures during import, enabling faster resolution.</li>
+             <li>Report all version differences found per Agent/Connector - rather than the first - so that all can be resolved in a single pass.</li>
+          </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Bug 20828: <b>Assigning or Sharing a recommendation alert results in an error message when using the Alert Action Block</b>: <i>When you assign or share a recommendation alert using the Alert Action Block, you encounter an error "Unable to assign Recommendation" that prevents the operation from completing.</i></td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Bug 21266: <b>Data Grid is no longer converting datetimes from UTC time to local</b>: <i>Date values displayed in Data Grid are shown in UTC time instead of being converted to your local timezone, making it difficult to interpret timestamps correctly.</i></td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td>Team Support 16609: <b>Removing 'View Collection' right causes errors, but including it exposes Collection secret</b>: <i>When you remove "View Collection" permission from a user who should have read-only access to some data streams (to hide the Collection secret), they encounter an error "Unable to fetch Devices" when viewing a category that contains published data streams.</i></td>
+    </tr>
+  </tbody>
+</table>
+
+## v4.5.2
+
+Date Released: 15 Aug 2025
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Feature</td>
+      <td><b><a href="../installation/deployment/azure-terraform/index.md">Azure Terraform deployment capabilities</a></b>, replacing previous manual deployment processes with an automated, streamlined infrastructure provisioning experience and delivering major improvements to Azure deployment along with complete documentation.</td>
+    </tr>
+  </tbody>
+</table>
+
+## v4.5.1
+
+Date Released: 28 Jul 2025
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security</td>
+      <td>
+            <p><b>Product security and stability</b>: We've mitigated several high-severity vulnerabilities by upgrading the corresponding NuGet packages:</p>
+            <ul>
+                <li>Upgraded system.formats.asn1 from 6.0.0 to 6.0.1 in App Designer for <a href="https://www.cve.org/CVERecord?id=CVE-2024-38095">CVE-2024-38095</a></li>
+                <li>Upgraded system.security.cryptography.xml from 4.4.0 to 4.4.2 in App Designer for <a href="https://www.cve.org/CVERecord?id=CVE-2018-0764">CVE-2018-0764</a>/<a href="https://www.cve.org/CVERecord?id=CVE-2018-0765">CVE-2018-0765</a></li>
+                <li>Upgraded Microsoft.Extensions.Caching.Memory from 8.0.0 to 8.0.1 in Data Stream Designer for <a href="https://www.cve.org/CVERecord?id=CVE-2024-43483">CVE-2024-43483</a></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Deployment</td>
+        <td>
+            <p><b>Container-Based Enhancements</b>:</p>
+            <ul>
+                <li>Introduced runtime certificate generation using dedicated builder containers, eliminating baked-in certificates and supporting both self-signed and customer-provided certificates</li>
+                <li>Implemented hybrid configuration support to enable Subscription Manager (SM) running on a Windows host while other applications run in Linux containers, resolving SM's Linux container reliability issues.</li>
+                <li>Resolved SM connectivity issues in container deployments by implementing proper BaseUrl/InternalBaseUrl handling, ensuring applications connect correctly from both server-side and client-side perspectives.</li>
+            </ul>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+## v4.5.0
+
+Date Released: 20 Jul 2025
 
 ### Common
 
@@ -39,48 +323,68 @@ Date Released: 13 Mar 2026
   <tbody>
     <tr>
       <td>Feature</td>
-      <td>
-        <p><b>Streams as Connectors</b>: New architecture that allows App Designer applications to use a published Data Stream as a data source.</p>
-        <p>The <b>XMPro Stream Connector</b> is used in App Designer to connect to a published Data Stream, supporting read, insert, update, and delete operations. The backing Data Stream comprises a <b>XMPro Stream Listener</b>, a Connector Agent (new category), and a <b>XMPro Stream Action Agent</b>. Agent configuration values are passed directly into the connected stream at runtime by App Designer. With Connectors now available in both App Designer and Data Stream Designer, attempting to import an integration file (.xmp) into the wrong product returns a clear error identifying which product the file belongs to.</p>
-        <p>Using this new feature results in much faster App Page page loads and less infrastructure to run the XMPro platform, but does require a MQTT broker to use it.</p>
-        <p><i>If you are upgrading, a migration script is available to transition your existing connections. Contact your XMPro account manager for assistance.</i></p>
-      </td>
+      <td><b>Containerized Deployment</b>: Both App Designer and Data Stream Designer can now be deployed as containers using Docker and orchestration platforms like Kubernetes. This containerized approach provides consistent deployment environments, improved scalability, and simplified infrastructure management. As an administrator, you can now deploy XMPro applications using modern container orchestration tools, enabling easier scaling, rolling updates, and integration with cloud-native infrastructure while maintaining environment consistency across development, staging, and production.</td>
     </tr>
+    <tr>
+        <td>Feature</td>
+        <td><b>Deployment At Scale</b>: A comprehensive set of REST APIs for managing application deployments across enterprise environments. These APIs provide programmatic access to export and import applications, manage Git repositories, handle deployment dependencies, and control access through new ManageDeployment permissions with secure CORS configuration. This means you can now automate your deployment processes, integrate XMPro with CI/CD pipelines, and manage large-scale deployments programmatically rather than through manual processes.</td>
+    </tr>
+  </tbody>
+</table>
+
+### App Designer
+
+<table>
+  <thead>
+    <tr>
+      <th width="120">Change Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Enhancement</td>
-      <td>
-        <p><b><a href="../technical-reference/oauth-smtp-configuration.md">OAuth SMTP Configuration Support</a></b>: Platform administrators can now configure OAuth 2.0 authentication for XMPro's outbound email notifications instead of username and password credentials.</p>
-        <p>OAuth SMTP authentication is supported across all deployment methods, including the Windows Server installer, Terraform modules, and Docker (xmpro-run). Administrators can configure the OAuth client ID, client secret, and token endpoint to match their email provider's requirements.</p>
-        <p>Modern email providers such as Microsoft 365 and Google Workspace are phasing out basic authentication for SMTP. OAuth support ensures XMPro's email notifications, including recommendation alerts, user invitations, and system notifications, remain fully operational in environments where basic auth has been disabled, while improving the overall security posture of your deployment.</p>
-      </td>
+      <td><b>Enhanced Expression Component</b>: The Expression component can now read data from multiple parent components simultaneously. Previously, expressions were limited to reading from a single parent, which restricted your ability to create complex calculations and data relationships. This enhancement allows you to build more sophisticated expressions that combine data from multiple sources in your application.</td>
     </tr>
     <tr>
-      <td>Deployment</td>
-      <td>
-        <p><b>Azure Container Instance Enhancements</b>: Two improvements to Stream Host deployments using Azure Container Instances (ACI):</p>
-        <ul>
-          <li><b>Virtual Network Integration</b>: ACI deployments can now be connected to an Azure Virtual Network, enabling private networking without public-facing container endpoints and meeting enterprise security and compliance requirements.</li>
-          <li><b>Right-Sized Default Configuration</b>: Default CPU and memory allocations have been updated to better reflect production workload requirements, reducing the need for manual configuration adjustments after initial deployment.</li>
-        </ul>
-      </td>
+      <td>Fix</td>
+      <td><b>Survey Archiving Display</b>: When you archive a survey in a recommendation, the survey would continue to appear active until you manually refreshed the page. This was confusing as it suggested the archiving action hadn't worked. The survey block now updates its display state immediately when archived, providing instant visual feedback that the action was successful.</td>
     </tr>
     <tr>
-      <td>Security</td>
-      <td>
-        <p><b>Product security and stability</b>: We've addressed several security vulnerabilities in this release.</p>
-        <p><i>Mitigated:</i></p>
-        <ul>
-          <li><a href="https://www.cve.org/CVERecord?id=CVE-2022-26907">CVE-2022-26907</a>: Upgraded Microsoft.Rest.ClientRuntime from 2.3.20 to 2.3.24 in App Designer and from 2.3.11 to 2.3.24 in Data Stream Designer.</li>
-          <li><a href="https://www.cve.org/CVERecord?id=CVE-2022-34716">CVE-2022-34716</a>: Upgraded System.Security.Cryptography.Xml from 4.4.2 to 6.0.1 in App Designer.</li>
-          <li><a href="https://www.cve.org/CVERecord?id=CVE-2023-29331">CVE-2023-29331</a>: Added System.Security.Cryptography.Pkcs 6.0.3 to App Designer.</li>
-          <li><a href="https://www.cve.org/CVERecord?id=CVE-2025-54575">CVE-2025-54575</a>: Upgraded SixLabors.ImageSharp from 3.1.7 to 3.1.11 in App Designer and Data Stream Designer.</li>
-          <li><a href="https://github.com/advisories/GHSA-4vgm-c2wm-63mw">GHSA-4vgm-c2wm-63mw</a>: Upgraded Microsoft.AspNetCore.App.Runtime.linux-musl-x64 from 8.0.24 to 8.0.25 in Subscription Manager, App Designer, Data Stream Designer, and XMPro AI.</li>
-          <li>Removed unused npm dependencies and overrode transitive package versions in App Designer to resolve Veracode-identified vulnerabilities in tar and tsiclient.npm.</li>
-          <li><a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117</a>: Applied log output sanitization to neutralize CRLF injection in App Designer and Data Stream Designer.</li>
-          <li><a href="https://cwe.mitre.org/data/definitions/285.html">CWE-285</a>: Added class-level [Authorize] attributes in App Designer and Data Stream Designer to enforce authentication by default, with explicit [AllowAnonymous] exemptions for public endpoints such as error pages and silent token renewal.</li>
-        </ul>
-        <p>For false positive assessments and container scan results, see the <a href="../resources/container-scan-4-6-0.md">Container Security Scan Report - XMPro 4.6.0</a>.</p>
-      </td>
+      <td>Fix</td>
+      <td><b>Timeline URL Navigation</b>: When you click on timeline entries to navigate to specific time periods or events, the URL navigation wasn't working properly, leaving you on the same view regardless of your selection. Timeline navigation now works correctly, allowing you to bookmark specific time periods and navigate directly to timeline events via URL parameters.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Email Notification Links</b>: When you receive email notifications about alerts, clicking the links in the email would take you to the standard alert view instead of the specific alert context. Email notification links now direct you to the appropriate alert view with proper context, making it easier to act on notifications directly from your inbox.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Tree Grid Selection Persistence</b>: When you configure a Tree Grid with multiple selection enabled and set default selections, the defaults wouldn't persist after page load. You would have to manually reselect items each time you visited the page. Tree Grid controls now properly retain their multiple selection defaults on page load, maintaining your configured selections.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Data Grid DateTime Filters</b>: When you set up a Data Grid with DateTime columns, the row filter options didn't match those available for Date columns, limiting your filtering capabilities. DateTime columns now have the same comparison operators as Date columns, giving you consistent filtering options across different date-related data types.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Data Source Field Sorting</b>: When you configure data sources in App Designer, the field list wasn't sorted alphabetically, making it difficult to find specific fields in large datasets. Data source fields are now sorted alphabetically, improving the designer experience when working with complex data structures.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Template Category Persistence</b>: When you assign a template category to an application, the category would sometimes disappear or not save properly. Template categories now persist correctly, ensuring your application organization and categorization remains intact.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Validation Groups</b>: When you use validation groups in App Designer, various issues could occur that prevented proper validation behavior. Validation group functionality has been improved to work reliably across different component configurations.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Notes Auto-Update Prevention</b>: When you work with notes in recommendations, notes would automatically update without prompting you, even when notes were null or previously saved. This could lead to unintended overwrites of your content. Notes now only update when you explicitly save them, preventing accidental data loss and ensuring your notes remain under your control.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Application Name Translations</b>: Application names were inconsistently translated across different products, with some showing incorrect or misleading translations (particularly affecting Portuguese-Brazil). Application names now display consistently and accurately across all products and locales.</td>
     </tr>
   </tbody>
 </table>
@@ -97,12 +401,12 @@ Date Released: 13 Mar 2026
   <tbody>
     <tr>
       <td>Fix</td>
-      <td><b>DropDown and TokenBox Not Displaying When Options Array Is Empty</b>: <i>When a DropDown or TokenBox property on an agent is configured with an empty options array, the control does not render in the agent configuration panel, making the property inaccessible.</i><br>DropDown and TokenBox controls now render correctly regardless of whether the options array is empty at the time the configuration panel is opened.</td>
+      <td><b>Timeline Form Updates</b>: When you use agents in your data streams, timeline views wouldn't show form updates properly, making it difficult to track changes and modifications. Timeline components now correctly display form updates when agents are involved, providing complete visibility into your data stream modifications and agent interactions.</td>
     </tr>
   </tbody>
 </table>
 
-### Stream Host
+### Subscription Manager
 
 <table>
   <thead>
@@ -113,30 +417,43 @@ Date Released: 13 Mar 2026
   </thead>
   <tbody>
     <tr>
-      <td>Feature</td>
-      <td>
-        <p>This release introduces a set of improvements that together deliver a more reliable, efficient, and upgrade-friendly Stream Host:</p>
-        <ul>
-          <li><b>Memory Optimisation</b>: Rearchitected with Event-Level Streaming Architecture, processing data one event at a time through a chain of agents rather than accumulating large in-memory batches.
-  <ul>
-  <li>Each agent releases memory as soon as it forwards an event, preventing unnecessary retention of intermediate results and significantly reducing RAM usage.</li>
-  <li>Downstream agents begin processing immediately upon receiving each event, without waiting for the full batch from the preceding agent.</li>
-  <li>Supports both event-level and batch processing: Event-Level Streaming for agents that can process each event independently and Agent-Level Streaming retained for agents that require full datasets (e.g. time-series for model-based analysis).</li>
-  </ul>
-  </li>
-          <li><b>Backward Compatibility</b>: Event-Level Streaming-enabled agents can run on pre 4.6 Stream Host instances, enabling rolling upgrades without downtime, but they will revert to Agent-Level Streaming behavior.</li>
-          <li><b>Process Isolation</b>: Errors in a data stream are contained and no longer affect other streams running on the same Stream Host instance.</li>
-          <li><b>Stable Assembly Versions</b>: Agent DLLs now maintain a consistent assembly version across builds, so developers no longer need to recompile custom agents after a Stream Host update.</li>
-        </ul>
-        <p>Process isolation and some memory improvements apply immediately without any changes to existing agents. To take full advantage of Event-Level Streaming, agents must be updated to implement the new async methods and overloads - see XMPro.IOT.Framework under NuGet Packages below.</p>
-      </td>
+      <td>Fix</td>
+      <td><b>Language Dropdown Population</b>: When you access the profile settings, the language dropdown would intermittently appear empty, preventing you from changing your language preference. The language dropdown now populates consistently, ensuring you can always modify your language settings when needed.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Company Request Rejections (Non-English)</b>: When your system is configured for non-English languages, you were unable to reject company subscription requests, limiting your ability to manage subscriptions in localized environments. Company request rejections now work properly across all supported languages.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Product Description Translations</b>: Product descriptions in Subscription Manager weren't being translated, showing only English text regardless of your selected language. Product descriptions now display in the appropriate language based on your locale settings.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Search Criteria Spacing</b>: When you perform searches in Subscription Manager, extra spaces were being added to search criteria results, affecting the display formatting and potentially impacting search accuracy. Search results now display without unwanted spacing.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Settings Blade Translation Coverage</b>: Various text elements in the settings blade weren't translated, creating an inconsistent user experience in non-English environments. Missing translations have been added to provide complete localization coverage in the settings interface.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Home Page Subscription Messages</b>: Subscription access messages on the SM home page weren't translated, displaying only in English regardless of your language preference. These messages now appear in the appropriate language based on your locale settings.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Password Change Confirmation</b>: When you change your password, the confirmation message wasn't translated, appearing only in English. Password change confirmation messages now display in the appropriate language for your locale.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Spanish Layout Heading Issues</b>: When using Spanish (es-ES) locale, headings weren't being translated correctly, causing display issues and confusion. Spanish headings now translate properly across all interface elements.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Email Template Address Updates</b>: All email notification templates across the platform now use the correct company address. This ensures that automated emails sent from XMPro (including alerts, invitations, and notifications) display the proper contact information, improving professional communication with users and external stakeholders.</td>
     </tr>
   </tbody>
 </table>
-
-### Subscription Manager
-
-No changes in this release.
 
 ### Package Manager
 
@@ -150,7 +467,15 @@ No changes in this release.
   <tbody>
     <tr>
       <td>Enhancement</td>
-      <td><b>Connector Category Support for Agent Packaging</b>: Agents can now be packaged using the new Connector category for use in Data Stream Designer. This category supports the <b>Streams as Connectors</b> feature - see Common above.</td>
+      <td><b>Settings Reordering</b>: You can now reorder Groups and Settings within the Package Manager Settings Blade using drag-and-drop functionality. This allows you to organize your agent configuration options in a logical order that makes sense for your specific use case, improving the user experience when configuring agents.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>File Type Support</b>: You can now attach any file type when adding Resource references in the Package Manager. Previously, only specific file types were supported, which limited your ability to include custom documentation, configuration files, or other resources with your agent packages. This enhancement removes file type restrictions, giving you greater flexibility in packaging your integrations.</td>
+    </tr>
+    <tr>
+      <td>Fix</td>
+      <td><b>Crash Prevention</b>: When working with connector packages, you previously encountered app crashes when deleting grid controls or creating new connector packages. The application would force close unexpectedly, losing your work. This issue has been resolved, and the Package Manager now handles grid deletions and connector package creation safely without crashing.</td>
     </tr>
   </tbody>
 </table>
@@ -159,32 +484,7 @@ No changes in this release.
 
 #### Agent Development
 
-##### XMPro.IOT.Framework
-
-<table>
-  <thead>
-    <tr>
-      <th width="120">Change Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Enhancement</td>
-      <td>
-        <p>The following async methods and constructor overloads were added to existing interfaces and args classes to support <b>Event-Level Streaming</b> feature - see Stream Hosts above:</p>
-        <ul>
-          <li><code>IPollingAgent</code>: new <code>PollAsync()</code> overload for async polling.</li>
-          <li><code>IReceivingAgent</code>: new <code>ReceiveAsync(string, IAsyncEnumerable&lt;byte[]&gt;)</code> overload for continuous stream ingestion.</li>
-          <li><code>IMapAndReceiveAgent</code>: new <code>ReceiveAsync(string, IAsyncEnumerable<(byte[], byte[])>)</code> overload for Agents that receive a mapped/typed stream of data evenets.</li>
-          <li><code>OnPublishArgs</code>: new constructors accepting <code>IAsyncEnumerable&lt;byte[]&gt;</code> and <code>IAsyncEnumerable&lt;string&gt;</code> for streaming event publishing.</li>
-          <li><code>OnErrorArgs</code>: new constructor accepting <code>IEnumerable&lt;JToken&gt;</code> for streaming error data.</li>
-        </ul>
-        <p>Agents that do not implement the async methods and overloads continue to work without any changes.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+No changes to XMPro.XMIoT.Framework.
 
 #### Connector Development
 

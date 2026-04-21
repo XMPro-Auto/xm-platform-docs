@@ -61,8 +61,8 @@ XMPro has the capability to pass data to Azure Machine Learning and train models
 #### Further Reading
 
 * [How to work with Data Streams](../../how-tos/data-streams/manage-data-streams.md)
-* [Python Integration](https://xmpro.gitbook.io/python/)
-* [Azure ML Integration](https://xmpro.gitbook.io/azure-ml/)
+* [Python Integration](https://xmpro.gitbook.io/integrations/python/)
+* [Azure ML Integration](https://xmpro.gitbook.io/integrations/azure-ml/)
 
 ### I've seen Mining examples. Can XMPro compose a Digital Twin for utilities?
 

@@ -54,7 +54,7 @@ The following software must be installed on the Stream Host server:
 >
 > **1** Not a prerequisite from v4.4.1+.\
 > **2** As per the ARM template for your Azure instance.\
-> **3** See the Ubuntu documentation for installing [ASP.NET Core Runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu) and [.NET Runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu) on Ubuntu.
+> **3** For Ubuntu installations, XMPro recommends using the [Docker-based Stream Host](complete-installation/install-stream-host/docker.md).
 
 ## Certificate and Communication Steps
 

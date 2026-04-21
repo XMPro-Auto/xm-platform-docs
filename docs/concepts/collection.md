@@ -19,8 +19,6 @@ A Stream Host is an application that can be [installed](#stream-host-installatio
 
 Both [Virtual and Non-Virtual](agent/virtual-vs-non-virtual-agents.md) Agents essentially run on a Stream Host, but how they are handled at design time differs greatly. Non-Virtual Agents require a Stream Host to be online for Data Stream Designer to be able to get their configurations, but Virtual Agents don't need a Stream Host to be running.
 
-Data Streams support two agent communication models for how Agents receive and process events from Stream Hosts. Event-Level Streaming Agents receive events one at a time as they arrive, keeping memory usage low. Agent-Level Streaming is the legacy model, where Agents continue to receive events in batches as before, so no existing stream designs are affected. For a detailed explanation of both models, see [Event-Level Streaming vs. Agent-Level Streaming](agent/event-level-streaming-vs-agent-level-streaming.md).
-
 > [Watch Video](https://www.youtube.com/embed/-f2TRr-OQSY)
 
 ### Collections

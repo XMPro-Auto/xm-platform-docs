@@ -80,17 +80,6 @@ Allows the user to select multiple items from the grid.
 
 Choose how the select all and deselect all will be applied to the Data Grid:
 
-**Page** - recommended for large datasets (200+ rows).
-
-**All Pages** - recommended for small datasets.
-
-> [!NOTE]
-> Note: applies when paging and multiple selection are enabled.
-
-#### Multiple Selection Mode
-
-Choose how the select all and deselect all will be applied to the Data Grid:
-
 * Page - recommended for large datasets (200+ rows).
 * All Pages - recommended for small datasets.
 
@@ -114,22 +103,16 @@ This will enable editing the row by clicking the item.
 
 ![Allow Updating](../../images/image-560.png)
 
-#### Allow Search
-
-This will let you search the grid with the search bar.
-
-![Allow Search](../../images/image-192.gif)
-
 #### Edit Mode
 
 Grid data can be edited in several modes. Set the Edit Mode property to specify the mode.
 
-| Mode | Description |
-| --- | --- |
-| Batch | A user edits data cell by cell. Changes are not updated until a user clicks the Save button. In this mode, the "Add" button is found above the grid rather than in the grid's header row, along with the Save and Reset buttons.<br>![Batch Mode](../../images/image-94.png) |
-| Batch With External Save | A user edits data cell by cell. Changes are not updated until a user clicks an external Block (e.g. a Button) with Update Data Sources corresponding to the grid's data source.<br>![Batch With External Save](../../images/image-1662.png) |
-| Cell | A user edits data cell by cell. Changes are saved once a cell loses focus, or discarded if a user presses Esc.<br>![Cell Mode](../../images/image-576.png) |
-| Row | A user edits data row by row. When a user clicks an "Edit" button in the right-most column, the corresponding row enters the editing state, and the "Save" and "Cancel" buttons appear in the right-most column. Pressing the "Save" button will update your data source immediately.<br>![Row Mode](../../images/image-1095.png) |
+| Mode                     | Description                                                                                                                                                                                                                                                                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Batch                    | A user edits data cell by cell. Changes are not updated until a user clicks the Save button. In this mode, the "Add" button is found above the grid rather than in the grid's header row, along with the Save and Reset buttons.<br>![Batch Mode](../../images/image-94.png)                                                      |
+| Batch With External Save | A user edits data cell by cell. Changes are not updated until a user clicks an external Block (e.g. a Button) with Update Data Sources corresponding to the grid's data source.<br>![Batch With External Save](../../images/image-1662.png)                                                                                       |
+| Cell                     | A user edits data cell by cell. Changes are saved once a cell loses focus, or discarded if a user presses Esc.<br>![Cell Mode](../../images/image-576.png)                                                                                                                                                                        |
+| Row                      | A user edits data row by row. When a user clicks an "Edit" button in the right-most column, the corresponding row enters the editing state, and the "Save" and "Cancel" buttons appear in the right-most column. Pressing the "Save" button will update your data source immediately.<br>![Row Mode](../../images/image-1095.png) |
 
 #### Allow Search
 

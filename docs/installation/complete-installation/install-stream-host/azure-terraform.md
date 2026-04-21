@@ -39,11 +39,11 @@ The Terraform module allows you to configure Stream Host resources based on your
 
 ### Option 1: With Full XMPro Platform
 
-When deploying the complete XMPro platform, Stream Host is automatically included. See the [basic example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/examples/layered/app) in the terraform-xmpro-azure repository.
+When deploying the complete XMPro platform, Stream Host is automatically included. See the [basic example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/examples/layered/app) in the terraform-xmpro-azure repository.
 
 ### Option 2: Standalone Stream Host
 
-To deploy only Stream Host to connect to an existing DS instance, use the dedicated [Stream Host example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/examples/layered/app) from the terraform-xmpro-azure repository.
+To deploy only Stream Host to connect to an existing DS instance, use the dedicated [Stream Host example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/examples/layered/app) from the terraform-xmpro-azure repository.
 
 The example includes:
 
@@ -84,7 +84,7 @@ The example includes:
    terraform apply
    ```
 
-For detailed configuration options and examples, refer to the [Stream Host example README](https://github.com/XMPro/terraform-xmpro-azure/blob/v4.6.0/README.md).
+For detailed configuration options and examples, refer to the [Stream Host example README](https://github.com/XMPro/terraform-xmpro-azure/blob/v4.5.5/index.md).
 
 ## Getting Collection Credentials
 
@@ -117,7 +117,7 @@ The Stream Host module supports various configuration options. Here are the most
 - **ADDITIONAL_INSTALLS**: System packages to install (works with all variants - APT for Debian, APK for Alpine)
 - **Custom variables**: Any additional environment variables (works with all variants)
 
-For a complete list of variables and configuration options, see the [module documentation](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/modules/_app/stream-host-container).
+For a complete list of variables and configuration options, see the [module documentation](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/modules/_app/stream-host-container).
 
 ## Common Configuration Examples
 
@@ -176,7 +176,7 @@ For more advanced configurations including:
 - Multiple Stream Host deployments
 - Custom networking
 
-See the comprehensive examples in the [terraform-xmpro-azure repository](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/examples/layered/app).
+See the comprehensive examples in the [terraform-xmpro-azure repository](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/examples/layered/app).
 
 ## Troubleshooting
 
@@ -209,7 +209,7 @@ For comprehensive troubleshooting including:
 - Network connectivity issues
 - Container restart loops
 
-Refer to the [troubleshooting section](https://github.com/XMPro/terraform-xmpro-azure/blob/v4.6.0/README.md) in the Stream Host example.
+Refer to the [troubleshooting section](https://github.com/XMPro/terraform-xmpro-azure/blob/v4.5.5/index.md) in the Stream Host example.
 
 ## Best Practices
 
@@ -237,9 +237,9 @@ Refer to the [troubleshooting section](https://github.com/XMPro/terraform-xmpro-
 
 All the code examples, configuration files, and detailed documentation for Stream Host deployment are available in the [terraform-xmpro-azure](https://github.com/XMPro/terraform-xmpro-azure) repository:
 
-- **[Stream Host Example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/examples/layered/app)** - Complete standalone deployment
-- **[Basic Platform Example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/examples/layered/app)** - Full platform with Stream Host
-- **[Module Documentation](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.6.0/modules/_app/stream-host-container)** - Detailed variable reference
+- **[Stream Host Example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/examples/layered/app)** - Complete standalone deployment
+- **[Basic Platform Example](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/examples/layered/app)** - Full platform with Stream Host
+- **[Module Documentation](https://github.com/XMPro/terraform-xmpro-azure/tree/v4.5.5/modules/_app/stream-host-container)** - Detailed variable reference
 
 ## Related Documentation
 

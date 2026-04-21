@@ -12,9 +12,23 @@ https?://xmpro-ad-sample\.azurewebsites\.net.*
 # ── Sites that block CI bots ──────────────────────────────────────────────────
 # McKinsey returns HTTP/2 protocol errors for automated requests.
 https?://(www\.)?mckinsey\.com.*
+# XMPro community forum returns network errors in CI.
+https?://community\.xmpro\.com.*
+# Sites that block automated requests (403/timeout in CI)
+https://www\.w3schools\.com/.*
+https://portal\.azure\.com/.*
+https://courses\.xmpro\.com/.*
+https://powerbi\.microsoft\.com/.*
+https://azure\.microsoft\.com/.*
+https://openai\.com/.*
+https://platform\.openai\.com/.*
+
+# ── Private GitHub repositories ───────────────────────────────────────────────
+# xmpro-development is a private repo; the link checker always gets a 404.
+https?://github\.com/XMPro/xmpro-development.*
 
 # ── Old GitBook integration documentation ─────────────────────────────────────
-# xmpro.gitbook.io is no longer active; links throughout the docs
+# xmpro.gitbook.io/integrations is no longer active; links throughout the docs
 # point to agent/connector reference pages that return 404.
 https?://xmpro\.gitbook\.io.*
 
@@ -24,37 +38,11 @@ https?://xmpro\.gitbook\.io.*
 https?://xmpro\.github\.io/Blueprints-Accelerators-Patterns/patterns/.*
 
 # ── Blueprints-Accelerators-Patterns accelerator paths ────────────────────────
-# The /accelerators/ tree paths on GitHub — repo was reorganised to lowercase.
-https?://github\.com/XMPro/Blueprints-Accelerators-Patterns/tree/master/[Aa]ccelerators/.*
+# The /Accelerators/ tree paths on GitHub return 404 (repo reorganised).
+https?://github\.com/XMPro/Blueprints-Accelerators-Patterns/tree/master/Accelerators/.*
 
-# ── terraform-xmpro-azure repository ──────────────────────────────────────────
-# This repo is private / access-restricted; CI runners receive 404.
-https?://github\.com/XMPro/terraform-xmpro-azure.*
-
-# ── xmpro-development repository ──────────────────────────────────────────────
-# Private repo; returns 404 to CI runners.
-https?://github\.com/XMPro/xmpro-development.*
-
-# ── community.xmpro.com ────────────────────────────────────────────────────────
-# Community portal returns network errors in CI environments.
-https?://community\.xmpro\.com.*
-
-# ── portal.azure.com ──────────────────────────────────────────────────────────
-# Azure Portal returns HTTP 403 to automated bots.
-https?://portal\.azure\.com.*
-
-# ── w3schools.com ─────────────────────────────────────────────────────────────
-# W3Schools returns HTTP 403 to automated/CI bots.
-https?://(www\.)?w3schools\.com.*
-
-# ── courses.xmpro.com ─────────────────────────────────────────────────────────
-# XMPro learning portal times out in CI environments.
-https?://courses\.xmpro\.com.*
-
-# ── powerbi.microsoft.com ─────────────────────────────────────────────────────
-# Power BI portal blocks automated requests.
-https?://powerbi\.microsoft\.com.*
-
-# ── azure.microsoft.com ───────────────────────────────────────────────────────
-# Azure marketing/docs site blocks CI bots.
-https?://azure\.microsoft\.com.*
+# ── terraform-xmpro-azure repository paths ────────────────────────────────────
+# Specific sub-paths inside this repo (examples/, modules/) return 404 — the
+# referenced directory structure does not yet exist publicly.
+https?://github\.com/XMPro/terraform-xmpro-azure/tree/.*
+https?://github\.com/XMPro/terraform-xmpro-azure/blob/.*

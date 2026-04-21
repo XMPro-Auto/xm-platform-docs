@@ -77,7 +77,7 @@ SH (Stream Host) ← Requires DS URL and collection details
 Run the installer on your SM server:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, configure:
@@ -113,7 +113,7 @@ Copy only the `.json` configuration files from SM server to AD server:
 Run the installer on your AD server:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, configure:
@@ -140,7 +140,7 @@ Copy only the `.json` configuration files from AD server to DS server:
 Run the installer on your DS server:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, configure:
@@ -167,7 +167,7 @@ Copy only the `.json` configuration files from DS server to SH server:
 Run the installer on your SH server:
 
 ```cmd
-powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.6.0/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
+powershell.exe -ExecutionPolicy Bypass -Command "$env:SCRIPT_URL='https://download.app.xmpro.com/4.5.5/install-xmpro-application.ps1'; iex (irm $env:SCRIPT_URL)"
 ```
 
 When prompted, configure:
@@ -180,88 +180,9 @@ Installation creates:
 
 - Stream Host Windows service
 
-## Post-Deployment Configuration
-
-### Configure Host Files
-
-After completing all installations, configure the hosts file on each server to enable proper hostname resolution between servers. This is essential when DNS is not configured for your internal server names.
-
-> [!IMPORTANT]
-> **Why Configure Hosts Files?**
->
-> During installation, each XMPro product is configured with a hostname (e.g., `sm-server-01`, `ad.yourcompany.com`). Products use these hostnames to communicate with each other for:
->
-> - **Authentication**: Products authenticate with SM using the configured hostname
-> - **API Communication**: AD and DS make requests to SM for license validation
-> - **Stream Host Connection**: SH connects to DS using the DS hostname
->
-> **Without hostname resolution:**
->
-> - Products cannot locate each other on the network
-> - Authentication requests fail with "remote name could not be resolved" errors
-> - The multi-server deployment will not function
->
-> **Alternatives to hosts file:**
->
-> - If your network has DNS configured, you can add DNS A records instead
-> - The hosts file is the simplest solution when DNS is not available or for testing environments
-
-#### Configure Hosts File on Each Server
-
-On **each server** (SM, AD, DS, SH), add entries for all other servers:
-
-1. **Open Notepad as Administrator**
-   - Press Windows key
-   - Type "Notepad"
-   - Right-click "Notepad" and select "Run as administrator"
-
-2. **Open the hosts file**
-   - In Notepad, click File > Open
-   - Navigate to: `C:\Windows\System32\drivers\etc\`
-   - Change file filter to "All Files (_._)"
-   - Select the `hosts` file and click Open
-
-3. **Add entries for all servers**
-
-   Add the following entries (replace with your actual server IPs and hostnames):
-
-   ```
-   # XMPro Multi-Server Deployment
-   192.168.1.10    sm-server-01
-   192.168.1.11    ad-server-01
-   192.168.1.12    ds-server-01
-   192.168.1.13    sh-server-01
-   ```
-
-4. **Save the file**
-   - Click File > Save
-   - Close Notepad
-
-> [!NOTE]
-> **Example Hostname Formats:**
->
-> - Simple names: `sm-server-01`, `ad-server-01`, `ds-server-01`, `sh-server-01`
-> - Fully qualified: `sm.yourcompany.com`, `ad.yourcompany.com`, `ds.yourcompany.com`, `sh.yourcompany.com`
->
-> Use the same hostname format that you specified during product installation.
-
-> [!TIP]
-> **Testing Hostname Resolution:**
->
-> After updating the hosts file, verify connectivity from any server:
->
-> ```cmd
-> ping sm-server-01
-> ping ad-server-01
-> ping ds-server-01
-> ping sh-server-01
-> ```
->
-> Each ping should resolve to the correct IP address and respond successfully.
-
 ## Post-Deployment Validation
 
-After completing post-deployment configuration, verify that products can communicate across servers:
+After completing all installation steps, verify that products can communicate across servers:
 
 1. **Access SM** - Navigate to `https://<sm-hostname>:5201` and log in with super admin credentials
 2. **Access AD** - From SM, navigate to App Designer or directly access `https://<ad-hostname>:5202`

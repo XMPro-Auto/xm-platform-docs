@@ -6,7 +6,7 @@ This guide helps you fix common issues when deploying XMPro on Azure.
 > **Most issues are solved by:**
 >
 > - Running `az login` to refresh your Azure authentication
-> - Making sure you're in the right directory (`terraform-xmpro-azure/examples/layered/infra` or `.../app`)
+> - Making sure you're in the right directory (`terraform-xmpro-azure/examples/basic`)
 > - Using a different Azure region if you get "quota exceeded" errors
 
 ## Most Common Issues
@@ -112,64 +112,7 @@ Look in your `terraform.tfvars` file for:
 - `site_admin_password`
 - `company_admin_password`
 
-### 8. Application layer errors (Step 5 - terraform plan/apply failures)
-
-**Problem:** Errors during application deployment, often related to infrastructure references.
-
-**Common errors and solutions:**
-
-**"Resource group not found"**
-
-```bash
-# Problem 1: resource_group_name in terraform.tfvars doesn't match infrastructure output
-# Solution: Get the correct name from infrastructure layer:
-cd ../infra
-terraform output resource_group_name
-# Copy the exact output to your app/terraform.tfvars
-
-# Problem 2: You're in a different Azure subscription
-# Solution: Check which subscription you're using:
-az account show
-# If wrong, switch to the same subscription used for infrastructure:
-az account set --subscription "Your Subscription Name"
-```
-
-**"SQL Server not found" or "cannot connect to database"**
-
-```bash
-# Problem: sql_server_fqdn is incorrect or database not ready
-# Solution 1: Get correct SQL server name:
-cd ../infra
-terraform output sql_server_fqdn
-# Copy to app/terraform.tfvars
-
-# Solution 2: Verify SQL server exists in Azure Portal
-# Check your resource group for the SQL server resource
-```
-
-**"Storage account not found"**
-
-```bash
-# Problem: storage_account_name doesn't match infrastructure
-# Solution:
-cd ../infra
-terraform output storage_account_name
-# Update in app/terraform.tfvars
-```
-
-**"App Service Plan not found"**
-
-```bash
-# Problem: Referenced App Service Plan names don't exist
-# Solution: Get all infrastructure outputs and verify names match:
-cd ../infra
-terraform output
-# Check that ad_service_plan_name, ds_service_plan_name, sm_service_plan_name match
-```
-
-**Best practice:** Always run `terraform plan` in the app layer before `apply`. This validates all your infrastructure references are correct.
-
-### 9. Applications won't start (App Service issues)
+### 8. Applications won't start (App Service issues)
 
 **Quick fixes to try:**
 
@@ -245,7 +188,7 @@ az resource list --resource-group $(terraform output -raw resource_group_name) -
 ## Still Stuck?
 
 1. **Double-check the basics:**
-   - Are you in the right directory? (`terraform-xmpro-azure/examples/layered/infra` or `.../app`)
+   - Are you in the right directory? (`terraform-xmpro-azure/examples/basic`)
    - Did you run `terraform init` first?
    - Is your `terraform.tfvars` file saved?
 
@@ -264,9 +207,9 @@ az resource list --resource-group $(terraform output -raw resource_group_name) -
    ```
 
 4. **Contact Support:**
-   - Use the [XMPro Support Portal](javascript:window.open('https://xmpro.na1.teamsupport.com/login/user','_blank'))
+   - Use the [XMPro Support Portal](https://xmpro.na1.teamsupport.com/login/user)
    - Include your error messages
    - Describe what step failed
 
 > [!NOTE]
-> For advanced troubleshooting and detailed technical issues, see the <a href="https://github.com/XMPro/terraform-xmpro-azure" target="_blank">complete module documentation</a>.
+> For advanced troubleshooting and detailed technical issues, see the [complete module documentation](https://github.com/XMPro/terraform-xmpro-azure).

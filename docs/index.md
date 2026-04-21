@@ -72,7 +72,6 @@
 ## Technical Reference
 
 - [Mosquitto MQTT Broker](technical-reference/mosquitto-mqtt-broker.md)
-- [OAuth SMTP Configuration](technical-reference/oauth-smtp-configuration.md)
 - [Redis Cache Implementation](technical-reference/redis-cache-implementation.md)
 - [Health Checks](technical-reference/health-checks.md)
 - [XMPro Log Events](technical-reference/xmpro-log-events/index.md)

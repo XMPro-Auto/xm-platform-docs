@@ -23,32 +23,15 @@ Dynamic Application Security Testing (DAST) analyzes a web application through t
 
 Software Composition Analysis scans all the components used in an application for security risks and vulnerabilities.
 
-## Application Security Results
+## Results
 
 | Product | SAST Score | DAST Score | Date |
 | --- | --- | --- | --- |
-| Subscription Manager 4.6.0 | 98 | 94 | 18 Mar 26 |
-| App Designer 4.6.0 | 95 | 95 | 18 Mar 26 |
-| Data Stream Designer 4.6.0 | 99 | 95 | 18 Mar 26 |
-| XMPro AI 4.6.0 | 95 | 95 | 18 Mar 26 |
-| WorkFlow | 95 | 95 | 18 Mar 26 |
-
-## Container Security Scanning
-
-In addition to application-level security testing, XMPro performs container image vulnerability scanning on every release using [Trivy](https://trivy.dev/), an open-source vulnerability scanner. All container images published to the XMPro Azure Container Registry are scanned for known vulnerabilities in OS packages and application dependencies.
-
-Each scan report includes:
-
-* Vulnerability counts by severity (Critical, High, Medium, Low)
-* False positive analysis for all Critical and High findings
-* Affected packages and CVE identifiers
-* Replication commands for independent verification
-
-### Container Scan Reports
-
-| Version | Scan Date | Scanner | Images Scanned | Report |
-|---------|-----------|---------|----------------|--------|
-| 4.6.0 | 17 Mar 26 | Trivy v0.61.0 | 6 | [View Report](container-scan-4-6-0.md) |
+| Subscription Manager 4.5 | 95 | 95 | 03 Oct 25 |
+| App Designer 4.5 | 72 | 95 | 03 Oct 25 |
+| Data Stream Designer 4.5 | 87 | 95 | 03 Oct 25 |
+| XMPro AI 4.5 | 95 | 95 | 03 Oct 25 |
+| WorkFlow | 97 | 95 | 03 Oct 25 |
 
 ## Support and Recommendations
 

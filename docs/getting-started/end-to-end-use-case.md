@@ -55,16 +55,16 @@ To begin, we will need to create a new Data Stream. To create a Data Stream, fol
 
 ![](../images/image-148.png)
 
-In a production environment, Data Streams would integrate with external data emitters through Agents like OSIsoft PI or MQTT Listeners. However, for the sake of keeping the example simple, we won't be using any Agents that require an environment to be set up. Instead, we will be simulating the data with the [Event Simulator](https://xmpro.gitbook.io/event-simulator/), [Calculated Field](https://xmpro.gitbook.io/calculated-field/), and [CSV Context Provider](https://xmpro.gitbook.io/csv/) Agents.
+In a production environment, Data Streams would integrate with external data emitters through Agents like OSIsoft PI or MQTT Listeners. However, for the sake of keeping the example simple, we won't be using any Agents that require an environment to be set up. Instead, we will be simulating the data with the [Event Simulator](https://xmpro.gitbook.io/integrations/event-simulator/), [Calculated Field](https://xmpro.gitbook.io/integrations/calculated-field/), and [CSV Context Provider](https://xmpro.gitbook.io/integrations/csv/) Agents.
 
 To simulate the telemetry from the pumps, follow the steps below:
 
 Drag into the canvas one of each of the following Agents:
 
-* [Event Simulator](https://xmpro.gitbook.io/event-simulator/) (Listener)
-* [Calculated Field](https://xmpro.gitbook.io/calculated-field/) (Transformation)
-* [CSV](https://xmpro.gitbook.io/csv/) (Context Provider)
-* [Join](https://xmpro.gitbook.io/join/) (Transformation)
+* [Event Simulator](https://xmpro.gitbook.io/integrations/event-simulator/) (Listener)
+* [Calculated Field](https://xmpro.gitbook.io/integrations/calculated-field/) (Transformation)
+* [CSV](https://xmpro.gitbook.io/integrations/csv/) (Context Provider)
+* [Join](https://xmpro.gitbook.io/integrations/join/) (Transformation)
 
 > [!NOTE]
 > Refer to [How to Upload an Agent to Data Stream Designer](../how-tos/agents/manage-agents.md#adding-an-agent) if you are not able to find the Agents in the toolbox or the correct versions.
@@ -109,7 +109,7 @@ Now we will configure the added Stream Objects. Save your Data Stream now and af
 
 ![](../images/image-392.png)
 
-We will need to simulate ingesting data about flow rate and temperature from sensors in the pumps. We can achieve this with the [Event Simulator](https://xmpro.gitbook.io/event-simulator/) Agent. The "Simulate Pump Data" Event Simulator will constantly generate data defined by the Event Definitions at a rate defined by the Events per Second property.
+We will need to simulate ingesting data about flow rate and temperature from sensors in the pumps. We can achieve this with the [Event Simulator](https://xmpro.gitbook.io/integrations/event-simulator/) Agent. The "Simulate Pump Data" Event Simulator will constantly generate data defined by the Event Definitions at a rate defined by the Events per Second property.
 
 > [!NOTE]
 > To edit the configuration of a Stream Object, either double-click it or click it once to select it and click the "Configure" button on the canvas header.
@@ -139,7 +139,7 @@ Change the Events per Second to 1. Click "Apply" on the Simulate Pump Data confi
 
 ![](../images/image-805.png)
 
-We need to add a way to simulate having three different pumps. At the moment the data is not identified, so we will need to add a range of identifiers to the data. This can be achieved with the [Calculated Field](https://xmpro.gitbook.io/calculated-field/) Agent. The "Add Pump Identifier" Calculated Field will add a "PumpId" field to the data generated with values "A", "B", and "C" for each subsequent row.
+We need to add a way to simulate having three different pumps. At the moment the data is not identified, so we will need to add a range of identifiers to the data. This can be achieved with the [Calculated Field](https://xmpro.gitbook.io/integrations/calculated-field/) Agent. The "Add Pump Identifier" Calculated Field will add a "PumpId" field to the data generated with values "A", "B", and "C" for each subsequent row.
 
 To configure the Stream Object, double click on "Add Pump Identifier" to open its configuration. Or, you can also highlight the Stream Object and click on the "Configure" option at the top of the Data Stream.
 
@@ -159,7 +159,7 @@ Press "Apply" on the PumpId expression and the Add Pump Identifier configuration
 
 ![](../images/image-1810.png)
 
-There is often metadata associated with assets that is not part of the live data from the sensors.  In this case, metadata includes whether the pump is currently under maintenance, the manufacturer, and the last service date. We must retrieve this data from elsewhere. In a production environment, this might be an SAP EAM system, but for this example, we can achieve this through the [CSV Context Provider](https://xmpro.gitbook.io/csv/) Agent.
+There is often metadata associated with assets that is not part of the live data from the sensors.  In this case, metadata includes whether the pump is currently under maintenance, the manufacturer, and the last service date. We must retrieve this data from elsewhere. In a production environment, this might be an SAP EAM system, but for this example, we can achieve this through the [CSV Context Provider](https://xmpro.gitbook.io/integrations/csv/) Agent.
 
 Double-click on the "Simulate Context Data for Assets" Stream Object to open the configuration menu. You can also highlight the Stream Object and click on the "Configure" option at the top of the Data Stream.
 
@@ -186,7 +186,7 @@ When completed, press the "Apply" button at the top of the configuration, and th
 
 ![](../images/image-441.png)
 
-The metadata about each pump needs to be appended to each row of sensor data received from the pumps. This can be achieved with the [Join](https://xmpro.gitbook.io/join/) Agent.
+The metadata about each pump needs to be appended to each row of sensor data received from the pumps. This can be achieved with the [Join](https://xmpro.gitbook.io/integrations/join/) Agent.
 
 The "Contextualize Data" Join will join together the data from the CSV Context Provider and the Calculated Field using the PumpId as the common field. Configure it as follows:
 
@@ -214,7 +214,7 @@ In this section, we will add some analytics and calculations that will find exce
 
 ![](../images/image-983.png)
 
-We want to only pass data onward in the Stream if the current pump is not under maintenance. This can be achieved with the [Filter](https://xmpro.gitbook.io/filter/) Agent. To do this, drag in a [Filter](https://xmpro.gitbook.io/filter/) Agent and connect the "Contextualize Data" Join endpoint to the Filter.
+We want to only pass data onward in the Stream if the current pump is not under maintenance. This can be achieved with the [Filter](https://xmpro.gitbook.io/integrations/filter/) Agent. To do this, drag in a [Filter](https://xmpro.gitbook.io/integrations/filter/) Agent and connect the "Contextualize Data" Join endpoint to the Filter.
 
 Rename the Filter to "Ignore Pumps Under Maintenance", and save. Double-click on the Stream Object to open the configuration menu. Click on the + symbol to add a new rule for the filter. Select "Add Condition", and configure the Filter to have the logic `R_UnderMaintenance` `Equals` `false`.
 
@@ -232,7 +232,7 @@ Press "Apply" on the Ignore Pumps Under Maintenance Data configuration page, and
 
 ![](../images/image-426.png)
 
-The data from the Pump Data has different units than what we want to use - it is measured in L/m and we want the units to be in L/s. This can be solved with the [Calculated Field](https://xmpro.gitbook.io/calculated-field/) Agent. To transform the data, drag in a [Calculated Field](https://xmpro.gitbook.io/calculated-field/) Agent, and rename it to "Change Unit to L/s".
+The data from the Pump Data has different units than what we want to use - it is measured in L/m and we want the units to be in L/s. This can be solved with the [Calculated Field](https://xmpro.gitbook.io/integrations/calculated-field/) Agent. To transform the data, drag in a [Calculated Field](https://xmpro.gitbook.io/integrations/calculated-field/) Agent, and rename it to "Change Unit to L/s".
 
 Connect the "Ignore Pumps Under maintenance" Filter endpoint to the Calculated Field and Save. Make sure you connect the left True Output of the  "Ignore Pumps Under maintenance" Stream Object to the Calculated Field's input.
 
@@ -254,9 +254,9 @@ Press "Apply" on the Change Unit to L/S configuration page, and press "Save" on 
 
 ![](../images/image-753.png)
 
-The Use Case requires that engineers should be alerted if the flow rate averaged over 5 seconds falls below 250 L/s, and if the temperature averaged over 5 seconds also starts to rise above 130°C then a critical level alert should be raised. This can be achieved with the [Aggregate](https://xmpro.gitbook.io/aggregate/) Agent.
+The Use Case requires that engineers should be alerted if the flow rate averaged over 5 seconds falls below 250 L/s, and if the temperature averaged over 5 seconds also starts to rise above 130°C then a critical level alert should be raised. This can be achieved with the [Aggregate](https://xmpro.gitbook.io/integrations/aggregate/) Agent.
 
-To calculate the average temperature and flow rate over 5 seconds, drag in the [Aggregate](https://xmpro.gitbook.io/aggregate/) Agent and name it "Average across 5 seconds". Connect the "Change Unit to L/S" Calculated Field endpoint to the Aggregate Agent and save.
+To calculate the average temperature and flow rate over 5 seconds, drag in the [Aggregate](https://xmpro.gitbook.io/integrations/aggregate/) Agent and name it "Average across 5 seconds". Connect the "Change Unit to L/S" Calculated Field endpoint to the Aggregate Agent and save.
 
 > [!NOTE]
 > You may need to maximize the page to see the grid properly. You can do this by pressing the "Maximize" button in the top-right corner of the page. Press the "Restore" button in the top-right corner to return it to the regular size.
@@ -280,7 +280,7 @@ Press "Apply" on the Average across 5 seconds configuration page, and press "Sav
 
 ![](../images/image-926.png)
 
-We want the data for the average flow rate to be in integer format to display it more easily. This can be achieved through the [Data Conversion](https://xmpro.gitbook.io/data-conversion/) Agent. To do this, drag in a [Data Conversion](https://xmpro.gitbook.io/data-conversion/) Agent and rename it to "Data Conversion". Connect the "Average across 5 seconds" endpoint to the Data Conversion Agent and press "Save" on the Data Stream page.
+We want the data for the average flow rate to be in integer format to display it more easily. This can be achieved through the [Data Conversion](https://xmpro.gitbook.io/integrations/data-conversion/) Agent. To do this, drag in a [Data Conversion](https://xmpro.gitbook.io/integrations/data-conversion/) Agent and rename it to "Data Conversion". Connect the "Average across 5 seconds" endpoint to the Data Conversion Agent and press "Save" on the Data Stream page.
 
 Configure the Data Conversion Agent with the following two rows (You may need to maximize the page again). Click on the + symbol to add each row:
 
@@ -314,7 +314,7 @@ In this section, we will integrate our Data Stream with the App Designer to trig
 
 ![](../images/image-1330.png)
 
-First, we want to trigger Recommendations with the data from the Data Stream. This can be achieved with the [Run Recommendation](https://xmpro.gitbook.io/run-recommendation/) Agent. To do this, drag in a [Run Recommendation](https://xmpro.gitbook.io/run-recommendation/) Agent and rename it to "Run Recommendation". Connect the "Data Conversion" endpoint to the Run Recommendation Agent and press "Save" on the Data Stream page
+First, we want to trigger Recommendations with the data from the Data Stream. This can be achieved with the [Run Recommendation](https://xmpro.gitbook.io/integrations/run-recommendation/) Agent. To do this, drag in a [Run Recommendation](https://xmpro.gitbook.io/integrations/run-recommendation/) Agent and rename it to "Run Recommendation". Connect the "Data Conversion" endpoint to the Run Recommendation Agent and press "Save" on the Data Stream page
 
 Configure the Run Recommendation Stream Object as follows:
 
@@ -350,11 +350,11 @@ Press "Apply" on the Run Recommendation configuration page, and press "Save" on 
 
 ![](../images/image-1493.png)
 
-We want to send data to an App to be displayed as a decision support dashboard for the engineers. This can be achieved through the [XMPro App](https://xmpro.gitbook.io/xmpro-app/) Agent.
+We want to send data to an App to be displayed as a decision support dashboard for the engineers. This can be achieved through the [XMPro App](https://xmpro.gitbook.io/integrations/xmpro-app/) Agent.
 
-Drag two [XMPro App](https://xmpro.gitbook.io/xmpro-app/) Agents onto the Data Stream and name them "Post Pump Overview" and "Post Pump Specifics". One will send an overview of the data for all pumps, and the other will send a large cached amount of data for each pump.
+Drag two [XMPro App](https://xmpro.gitbook.io/integrations/xmpro-app/) Agents onto the Data Stream and name them "Post Pump Overview" and "Post Pump Specifics". One will send an overview of the data for all pumps, and the other will send a large cached amount of data for each pump.
 
-Now we run into a problem; we want to connect multiple agents to the same data. To solve this, drag a [Broadcast](https://xmpro.gitbook.io/broadcast/) Agent into the Stream, and rename it to "Broadcast". Disconnect the "Ignore Pumps Under Maintenance" input arrow and connect it to the new Broadcast Stream Object. You can disconnect the arrow by highlighting the arrow itself and clicking on the "Delete" button at the top of the Data Stream.
+Now we run into a problem; we want to connect multiple agents to the same data. To solve this, drag a [Broadcast](https://xmpro.gitbook.io/integrations/broadcast/) Agent into the Stream, and rename it to "Broadcast". Disconnect the "Ignore Pumps Under Maintenance" input arrow and connect it to the new Broadcast Stream Object. You can disconnect the arrow by highlighting the arrow itself and clicking on the "Delete" button at the top of the Data Stream.
 
 Alternatively, you can click on the green rectangle (input) on the "Ignore Pumps Under Maintenance" Stream Object, and drag the arrow to the green rectangle (input) of the "Broadcast" Stream Object. Connect the Broadcast endpoints to the two XMPro App Stream Objects and the "Ignore Pumps Under maintenance" Filter, as shown in the video below:
 
@@ -535,7 +535,7 @@ Create the new Rule with the following properties:
 | --- | --- |
 | Rule Name | Critical - Plant is overheating |
 | Alert Headline | Alert `@L_PumpId`: Plant has started to overheat due to low flow. |
-| Alert Description | Plant is overheating due to low flow rate, immediate action is required to avoid damage. Temperature:  ﻿`@CoolantTemperatureAvg`﻿ Flow Rate: ﻿`@FlowRateAvg` |
+| Alert Description | Plant is overheating due to low flow rate, immediate action is required to avoid damage. Temperature:  ﻿`@CoolantTemperatureAvg`﻿ Flow Rate: ﻿`@FlowRateAvg`﻿ |
 | Alert Ranking | High |
 | Icon | Feel free to load a suitable icon or use the default. Sample icons can be found in the [Icon Library](../resources/icon-library.md). |
 | Impact Metric | <p>Prefix: <em>$</em></p><p>Value: <em>25</em></p><p>Unit of Measurement: <em>K</em></p> |

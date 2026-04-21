@@ -41,7 +41,8 @@ These settings can be found in Data Stream Designer:
 Below is the XMPro Docker Stream Host repository.
 
 ```
-xmpro.azurecr.io/stream-host
+xmpro.azurecr.io
+/stream-host
 ```
 
 ## Image Variants
@@ -51,13 +52,15 @@ xmpro.azurecr.io/stream-host
 All images are tagged with their version number. For example:
 
 ```
-xmpro.azurecr.io/stream-host:4.6.0
+xmpro.azurecr.io
+/stream-host:5.0.0-alpha
 ```
 
 The `latest` tag points to the most recent release:
 
 ```
-xmpro.azurecr.io/stream-host:latest
+xmpro.azurecr.io
+/stream-host:latest
 ```
 
 > [!WARNING]
@@ -69,9 +72,9 @@ A Stream Host running a Data Stream must provide the capabilities to run each Ag
 
 | Image Name | Description |
 | --- | --- |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim` | Debian (Default) |
-| `xmpro.azurecr.io/stream-host:4.6.0-bookworm-slim-python3.12` | Debian with Python |
-| `xmpro.azurecr.io/stream-host:4.6.0-alpine3.21` | Alpine |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-bookworm-slim` | Debian (Default) |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-bookworm-slim-python3.12` | Debian with Python |
+| `xmpro.azurecr.io/stream-host:5.0.0-alpha-alpine3.21` | Alpine |
 
 ### Choosing the Right Image
 
@@ -137,7 +140,8 @@ docker run `
   -e "XM__XMPRO__GATEWAY__COLLECTIONID=<Collection ID>" `
   -e "XM__XMPRO__GATEWAY__SECRET=<Collection Secret>" `
   -e "XM__XMPRO__GATEWAY__SERVERURL=<Server URL>" `
-  xmpro.azurecr.io/stream-host:latest
+  xmpro.azurecr.io
+/stream-host:latest
 ```
 
 #### With optional environment variables
@@ -157,7 +161,8 @@ docker run `
 -v "<path_to_your_solution>:/opt/" `
 -e "PIP_REQUIREMENTS_PATH=/opt" `
 -e "ADDITIONAL_INSTALLS=git" `
-xmpro.azurecr.io/stream-host:latest
+xmpro.azurecr.io
+/stream-host:latest
 ```
 
 > [!NOTE]
@@ -172,7 +177,8 @@ docker run \
 -e "XM__XMPRO__GATEWAY__COLLECTIONID=<Collection ID>" \
 -e "XM__XMPRO__GATEWAY__SECRET=<Collection Secret>" \
 -e "XM__XMPRO__GATEWAY__SERVERURL=<Server URL>" \
-xmpro.azurecr.io/stream-host:latest
+xmpro.azurecr.io
+/stream-host:latest
 ```
 
 With optional environment variables
@@ -192,7 +198,8 @@ MSYS_NO_PATHCONV=1 docker run \
 -v "<path_to_your_solution>:/opt/" \
 -e "PIP_REQUIREMENTS_PATH=/opt" \
 -e "ADDITIONAL_INSTALLS=git" \
-xmpro.azurecr.io/stream-host:latest
+xmpro.azurecr.io
+/stream-host:latest
 ```
 
 > [!NOTE]
@@ -205,7 +212,8 @@ Create a `compose.yaml` file in your working directory:
 ```yaml
 services:
   stream-host:
-    image: xmpro.azurecr.io/stream-host:latest
+    image: xmpro.azurecr.io
+/stream-host:latest
     pull_policy: always
     container_name: 'stream-host'
     environment:
@@ -220,7 +228,8 @@ With optional environment variables
 ```yaml
 services:
   stream-host:
-    image: xmpro.azurecr.io/stream-host:latest
+    image: xmpro.azurecr.io
+/stream-host:latest
     pull_policy: always
     container_name: 'stream-host'
     environment:
