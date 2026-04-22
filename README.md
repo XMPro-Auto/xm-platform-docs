@@ -1,6 +1,6 @@
 # XMPro Platform Documentation
 
-Product documentation for the XMPro Intelligent Digital Twin Suite.
+Product documentation for the XMPro Platform.
 
 **Live site**: [docs.xmpro.com](https://docs.xmpro.com)
 
