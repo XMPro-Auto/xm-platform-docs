@@ -1,79 +1,36 @@
-# XMPro Platform Documentation
+# What is XMPro?
 
-## Getting Started
+XMPro's Application Development Platform empowers engineers and subject matter experts to build real-time applications without coding. The platform consists of 3 main software components:
 
-- [Browser Requirements](getting-started/browser-requirements.md)
-- [End-To-End Use Case](getting-started/end-to-end-use-case.md)
+### XMPro App Designer
 
-## Resources
+A visual page designer that enables you to create custom page designs by dragging blocks from the toolbox onto your page, configure their properties and connect to your data sources, all without having to code.
 
-- [Icon Library](resources/icon-library.md)
-- [Platform Security](resources/platform-security.md)
+### XMPro Data Stream Designer
 
-## Concepts
+A drag-and-drop interface to visually design Data Streams (a streaming data pipeline). Use XMPro Connectors in your Data Streams to bring in real-time data from a variety of sources, add contextual data, apply analytics, and initiate actions based on events in your data.
 
-- [Agent](concepts/agent/index.md)
-- [Application](concepts/application/index.md)
-- [Category](concepts/category.md)
-- [Collection and Stream Host](concepts/collection.md)
-- [Connector](concepts/connector.md)
-- [Data Stream](concepts/data-stream/index.md)
-- [Landing Pages & Favorites](concepts/landing-pages.md)
-- [Manage Access](concepts/manage-access.md)
-- [Recommendation](concepts/recommendation/index.md)
-- [Variable](concepts/variable.md)
-- [Version](concepts/version.md)
-- [XMPro AI](concepts/xmpro-ai/index.md)
+### XMPro Notebook
 
-## How-To Guides
+Harnessing the power of the Jupyter Notebook, XMPro Notebook provides an intuitive and flexible interface for data analysis, scientific computing, machine learning, and more. Users can write and execute code independently, facilitating step-by-step exploration and experimentation with real-time data.
 
-- [Agents](how-tos/agents/index.md)
-- [Application](how-tos/apps/index.md)
-- [Connectors](how-tos/connectors/index.md)
-- [Data Streams](how-tos/data-streams/index.md)
-- [Import, Export, and Clone](how-tos/import-export-and-clone.md)
-- [Manage Access](how-tos/manage-access.md)
-- [Manage Categories](how-tos/manage-categories.md)
-- [Manage Landing Pages & Favorites](how-tos/manage-landing-pages.md)
-- [Manage Site Settings](how-tos/manage-site-settings.md)
-- [Manage Variables](how-tos/manage-variables.md)
-- [Manage Versions](how-tos/manage-versions.md)
-- [Publish](how-tos/publish/index.md)
-- [Recommendations](how-tos/recommendations/index.md)
-- [Stream Host](how-tos/stream-host.md)
+### XMPro Connectors
 
-## [Blocks](blocks-toolbox/index.md)
+XMPro's extensible [integration library](https://xmpro.gitbook.io/integrations) includes 100+ Connectors for industrial automation solutions, IoT platforms, historians, enterprise applications, AI/ML, and collaboration solutions.
 
-- [Common Properties](blocks-toolbox/common-properties.md)
-- [Actions](blocks-toolbox/actions/index.md)
-- [Advanced](blocks-toolbox/advanced/index.md)
-- [AI](blocks-toolbox/ai/index.md)
-- [Basic](blocks-toolbox/basic/index.md)
-- [Device Input](blocks-toolbox/device-input/index.md)
-- [Layout](blocks-toolbox/layout/index.md)
-- [Recommendations](blocks-toolbox/recommendations/index.md)
-- [Visualizations](blocks-toolbox/visualizations/index.md)
-- [Widgets](blocks-toolbox/widgets.md)
+## Watch The Demo Video
 
-## Administration
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hi_cXYA7xsg" title="XMPro Real-Time Event Intelligence Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Administrative Accounts](administration/administrative-accounts.md)
-- [Companies](administration/companies/index.md)
-- [Language](administration/language.md)
-- [Subscriptions](administration/subscriptions-admin/index.md)
-- [Users](administration/users/index.md)
+## How The Documentation Is Organized
 
-## [Deployment](installation/overview.md)
-
-- [Deploy XMPro](installation/deployment/index.md)
-- [Post-deployment](installation/complete-installation/index.md)
-
-## Technical Reference
-
-- [Mosquitto MQTT Broker](technical-reference/mosquitto-mqtt-broker.md)
-- [OAuth SMTP Configuration](technical-reference/oauth-smtp-configuration.md)
-- [Redis Cache Implementation](technical-reference/redis-cache-implementation.md)
-- [Health Checks](technical-reference/health-checks.md)
-- [XMPro Log Events](technical-reference/xmpro-log-events/index.md)
-
-## [Release Notes](release-notes/index.md)
+* **Getting Started** - New here? [Contact us](https://xmpro.com/contact/) and get started with the End-To-End Use Case by following [this detailed tutorial](getting-started/end-to-end-use-case.md).
+* **Resources** - General articles, such as release news, a sizing guideline, an icon library, and FAQs.
+* **Concepts** - Detailed explanations of the platform's essential concepts, like Data Streams, Recommendations, Applications, and Connectors.
+* **How-To Guides** - Step-by-step tutorials to help you create Apps and Data Streams.
+* **Blocks** - Detailed descriptions of the components you can use to design your App pages and how to configure them.
+* **Administration** - How to manage users, licenses, and subscriptions in XMPro.
+  _This documentation is only relevant to administrators._
+* **Deployment** - How to install XMPro in a variety of environments.
+  _This documentation is only relevant to administrators._
+* **Release Notes** - The latest features and bug fixes.
