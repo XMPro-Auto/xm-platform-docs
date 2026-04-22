@@ -6,7 +6,7 @@ on:
       - main
       - v4.5
       - v4.4
-      - v5.0
+      # - v5.0  # uncomment when ready to release
 
 concurrency:
   group: deploy-docs
@@ -45,7 +45,7 @@ jobs:
             main)   VERSION="4.6" ;;
             v4.5)   VERSION="4.5" ;;
             v4.4)   VERSION="4.4" ;;
-            v5.0)   VERSION="5.0" ;;
+            # v5.0)   VERSION="5.0" ;;  # uncomment when ready to release
             *)      echo "Unknown branch: $BRANCH"; exit 1 ;;
           esac
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
