@@ -7,7 +7,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: images/logo-light.png
+  logo: images/logo-dark.png
   favicon: images/favicon.png
   font: false
   palette:
