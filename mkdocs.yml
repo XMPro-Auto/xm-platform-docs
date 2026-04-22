@@ -7,12 +7,22 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: images/logo-dark.png
+  logo: images/logo-light.png
   favicon: images/favicon.png
+  font: false
   palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
     - scheme: default
       primary: custom
-      accent: teal
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.sections
@@ -28,6 +38,8 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+copyright: Copyright &copy; 2025 XMPro. All rights reserved.
 
 extra:
   version:
