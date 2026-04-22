@@ -72,6 +72,11 @@
 
 /* --- Light scheme --- */
 [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #f8f9fa;
+  --md-primary-fg-color--light: #ffffff;
+  --md-primary-fg-color--dark: #e9ecef;
+  --md-primary-bg-color: #212529;
+  --md-primary-bg-color--light: rgba(33, 37, 41, 0.7);
   --md-typeset-a-color: #0091D1;
 }
 
